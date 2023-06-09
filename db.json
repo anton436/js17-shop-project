@@ -1,1 +1,22 @@
-{ "products": [] }
+{
+  "products": [
+    {
+      "title": "test",
+      "pic1": "1",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 2222,
+      "category": "shoes",
+      "id": 1
+    },
+    {
+      "title": "test 2",
+      "pic1": "3",
+      "pic2": "2",
+      "pic3": "1",
+      "price": 5555555,
+      "category": "watch",
+      "id": 2
+    }
+  ]
+}
