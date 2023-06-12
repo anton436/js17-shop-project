@@ -9,7 +9,7 @@ import {
   Grid,
   Button,
 } from "@mui/material";
-import { useProducts } from "../contexts/ProductContextProvider";
+import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductSize from "./ProductSize";
 
 const ProductDetail = () => {

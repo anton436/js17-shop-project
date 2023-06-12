@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { ACTION, API } from "../../helpers/consts";
+import { ACTION, API } from "../helpers/consts";
 import { useNavigate } from "react-router-dom";
 
 export const productContext = createContext();

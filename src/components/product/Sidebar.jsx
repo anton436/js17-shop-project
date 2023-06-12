@@ -1,4 +1,8 @@
 import {
+<<<<<<< HEAD
+=======
+  Box,
+>>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
   Divider,
   FormControl,
   FormControlLabel,
@@ -13,6 +17,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
+<<<<<<< HEAD
     <Grid md={3}>
       <Paper elevation={3} sx={{ padding: "1rem" }}>
         <TextField fullWidth label="search..." variant="standard" />
@@ -67,6 +72,55 @@ const Sidebar = () => {
             </RadioGroup>
           </FormControl>
         </Divider>
+=======
+    <Grid item md={3}>
+      <Paper elevation={3} sx={{ p: 2 }}>
+        <TextField fullWidth label="search..." variant="standard" />
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Category</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="All"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="All" control={<Radio />} label="All" />
+            <FormControlLabel
+              value="Clothes"
+              control={<Radio />}
+              label="Clothes"
+            />
+            <FormControlLabel value="Shoes" control={<Radio />} label="Shoes" />
+            <FormControlLabel
+              value="Accessories"
+              control={<Radio />}
+              label="Accessories"
+            />
+          </RadioGroup>
+        </FormControl>
+        <Divider />
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">
+            Sort By Price
+          </FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="All"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="All" control={<Radio />} label="All" />
+            <FormControlLabel
+              value="asc"
+              control={<Radio />}
+              label="Low to High"
+            />
+            <FormControlLabel
+              value="desc"
+              control={<Radio />}
+              label="High to Low"
+            />
+          </RadioGroup>
+        </FormControl>
+>>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
       </Paper>
     </Grid>
   );
