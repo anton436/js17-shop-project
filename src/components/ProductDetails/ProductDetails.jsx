@@ -30,7 +30,7 @@ const ProductDetail = () => {
           marginTop: "20px",
         }}
       >
-        Home / {productDetails.category} / {productDetails?.title}
+        Home / {productDetails?.category} / {productDetails?.title}
       </Typography>
 
       <Box

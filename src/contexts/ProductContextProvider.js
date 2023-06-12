@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer, useState } from "react";
-import { ACTION, API } from "../helpers/consts";
+
 import { useNavigate } from "react-router-dom";
+import { ACTIONS, API } from "../helpers/consts";
 
 export const productContext = createContext();
 
@@ -16,10 +17,10 @@ const INIT_STATE = {
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case ACTION.GET_PRODUCTS:
+    case ACTIONS.GET_PRODUCTS:
       return { ...state, products: action.payload };
 
-    case ACTION.GET_PRODUCT_DETAILS:
+    case ACTIONS.GET_PRODUCT_DETAILS:
       return { ...state, productDetails: action.payload };
 
     default:
@@ -34,7 +35,7 @@ const ProductContextProvider = ({ children }) => {
   //! get request (READ)
   const getProducts = async () => {
     const { data } = await axios(API);
-    dispatch({ type: ACTION.GET_PRODUCTS, payload: data });
+    dispatch({ type: ACTIONS.GET_PRODUCTS, payload: data });
   };
 
   //! post request (CREATE)
@@ -52,7 +53,7 @@ const ProductContextProvider = ({ children }) => {
   //! get one product info
   const getProductDetails = async (id) => {
     const { data } = await axios(`${API}/${id}`);
-    dispatch({ type: ACTION.GET_PRODUCT_DETAILS, payload: data });
+    dispatch({ type: ACTIONS.GET_PRODUCT_DETAILS, payload: data });
   };
 
   //! patch request (UPDATE PRODUCT)

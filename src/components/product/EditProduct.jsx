@@ -1,15 +1,9 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import { useProducts } from "../contexts/ProductContextProvider";
-import { useParams } from "react-router-dom";
-=======
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
@@ -36,11 +30,6 @@ const EditProduct = () => {
     }
   }, [productDetails]);
 
-<<<<<<< HEAD
-  console.log(productDetails);
-
-=======
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
   const handleInp = (e) => {
     if (e.target.name === "price") {
       let obj = {
@@ -56,10 +45,6 @@ const EditProduct = () => {
       setProduct(obj);
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
   console.log(product);
   return (
     <Box sx={{ width: "60vw", margin: "10vh auto" }}>
@@ -107,18 +92,11 @@ const EditProduct = () => {
         value={product.price}
       />
       <TextField
-<<<<<<< HEAD
-        onChange={handleInp}
-=======
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
         fullWidth
         name="category"
         label="category"
         variant="outlined"
-<<<<<<< HEAD
-=======
         onChange={handleInp}
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
         value={product.category}
       />
       <Button

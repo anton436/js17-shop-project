@@ -1,12 +1,7 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-<<<<<<< HEAD
-import React, { useState } from "react";
-import { useProducts } from "../contexts/ProductContextProvider";
-=======
 import React from "react";
 import { useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -35,10 +30,6 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
   console.log(product);
   return (
     <Box sx={{ width: "60vw", margin: "10vh auto" }}>
@@ -81,18 +72,11 @@ const AddProduct = () => {
         variant="outlined"
       />
       <TextField
-<<<<<<< HEAD
-        onChange={handleInp}
-=======
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
         fullWidth
         name="category"
         label="category"
         variant="outlined"
-<<<<<<< HEAD
-=======
         onChange={handleInp}
->>>>>>> 91796cc7958dcb962cb9ba9ef287864e25859692
       />
       <Button
         onClick={() => addProduct(product)}
