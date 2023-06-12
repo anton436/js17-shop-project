@@ -1,22 +1,40 @@
 {
   "products": [
     {
-      "title": "test",
-      "pic1": "1",
+      "title": "EDITED 1",
+      "pic1": "22",
       "pic2": "2",
       "pic3": "3",
       "price": 2222,
-      "category": "shoes",
+      "category": "EDITED  shoes",
       "id": 1
     },
     {
-      "title": "test 2",
-      "pic1": "3",
+      "title": "EDITED 2",
+      "pic1": "22",
       "pic2": "2",
-      "pic3": "1",
-      "price": 5555555,
-      "category": "watch",
+      "pic3": "3",
+      "price": 2222,
+      "category": "EDITED  shoes",
       "id": 2
+    },
+    {
+      "title": "EDITED 3",
+      "pic1": "22",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 2222,
+      "category": "EDITED  shoes",
+      "id": 3
+    },
+    {
+      "title": "EDITED 4",
+      "pic1": "22",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 2222,
+      "category": "EDITED  shoes",
+      "id": 4
     }
   ]
 }

@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
+import { Box, Grid, Pagination } from "@mui/material";
 import React, { useEffect } from "react";
+import { useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
 
@@ -8,14 +9,38 @@ const ProductList = () => {
   useEffect(() => {
     getProducts();
   }, []);
+  // pagination
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 3;
+  const count = Math.ceil(products.length / itemsPerPage);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+  };
+
+  function currentData() {
+    const begin = (page - 1) * itemsPerPage;
+    const end = begin + itemsPerPage;
+    return products.slice(begin, end);
+  }
+
+  // pagination
+
   return (
-    <Box
-      sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}
-    >
-      {products.map((item) => (
-        <ProductCard key={item.id} item={item} />
-      ))}
-    </Box>
+    <Grid item md={9}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap",
+        }}
+      >
+        {currentData().map((item) => (
+          <ProductCard key={item.id} item={item} />
+        ))}
+      </Box>
+      <Pagination count={count} page={page} onChange={handleChange} />
+    </Grid>
   );
 };
 
