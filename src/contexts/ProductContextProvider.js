@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { ACTIONS, API } from "../helpers/consts";
 
@@ -43,6 +44,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   //! delete request (DELETE)
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
@@ -57,21 +59,18 @@ const ProductContextProvider = ({ children }) => {
   //! patch request (UPDATE PRODUCT)
   const saveEditedProduct = async (editedProduct) => {
     await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
-    navigate("/products");
+    navigate(`/products`);
   };
 
   const values = {
     addProduct,
     getProducts,
     products: state.products,
-
     deleteProduct,
-
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
   };
-
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );

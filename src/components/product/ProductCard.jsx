@@ -17,6 +17,7 @@ export default function ProductCard({ item }) {
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
         title="green iguana"
+        onClick={() => navigate(`/details/${item.id}`)}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

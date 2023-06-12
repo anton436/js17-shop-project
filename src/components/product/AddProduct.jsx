@@ -30,7 +30,6 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
-
   console.log(product);
   return (
     <Box sx={{ width: "60vw", margin: "10vh auto" }}>
