@@ -17,11 +17,7 @@ import { Link } from "react-router-dom";
 const pages = [
   { name: "Home", link: "/", id: 1 },
   { name: "Products", link: "/products", id: 2 },
-<<<<<<< HEAD
-  { name: "Admin", link: "/admin", id: 3 },
-=======
   { name: "ADMIN", link: "/admin", id: 3 },
->>>>>>> 7477af825bc2f4e6a619bd16a66f8b336c176a4b
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 

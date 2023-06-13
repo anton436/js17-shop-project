@@ -17,28 +17,13 @@ export default function ProductCard({ item }) {
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
         title="green iguana"
-<<<<<<< HEAD
-=======
         onClick={() => navigate(`/details/${item.id}`)}
->>>>>>> 7477af825bc2f4e6a619bd16a66f8b336c176a4b
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-<<<<<<< HEAD
-          {item.price}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-          Edit
-        </Button>
-        <Button size="small" onClick={() => deleteProduct(item.id)}>
-          Delete
-        </Button>
-=======
           {item.price} $
         </Typography>
       </CardContent>
@@ -49,7 +34,6 @@ export default function ProductCard({ item }) {
         <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </Button>
->>>>>>> 7477af825bc2f4e6a619bd16a66f8b336c176a4b
       </CardActions>
     </Card>
   );
