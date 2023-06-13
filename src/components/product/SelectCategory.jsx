@@ -17,7 +17,7 @@ export default function SelectCategory({ product, setProduct }) {
         id="demo-simple-select"
         defaultValue=""
         label="Category"
-        value={product.categoty}
+        value={product.category}
         onChange={handleChange}>
         <MenuItem value="">Select Category</MenuItem>
         <MenuItem value="Clothes">Clothes</MenuItem>
