@@ -9,16 +9,16 @@ import {
   Radio,
   RadioGroup,
   TextField,
-} from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useProducts } from '../../contexts/ProductContextProvider';
-import { useSearchParams } from 'react-router-dom';
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useProducts } from "../../contexts/ProductContextProvider";
+import { useSearchParams } from "react-router-dom";
 
-const Sidebar = () => {
+const SideBar = () => {
   const { fetchByParams } = useProducts();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get('q') || '');
+  const [search, setSearch] = useState(searchParams.get("q") || "");
 
   useEffect(() => {
     setSearchParams({ q: search });
@@ -26,7 +26,7 @@ const Sidebar = () => {
 
   return (
     <Grid item md={3}>
-      <Paper elevation={3} sx={{ padding: '1rem' }}>
+      <Paper elevation={3} sx={{ padding: "1rem" }}>
         <TextField
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -40,7 +40,8 @@ const Sidebar = () => {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
-            onChange={(e) => fetchByParams('category', e.target.value)}>
+            onChange={(e) => fetchByParams("category", e.target.value)}
+          >
             <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel
               value="Clothes"
@@ -62,7 +63,8 @@ const Sidebar = () => {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
-            onChange={(e) => fetchByParams('_sort', e.target.value)}>
+            onChange={(e) => fetchByParams("_sort", e.target.value)}
+          >
             <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel
               value="asc"
@@ -81,4 +83,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
