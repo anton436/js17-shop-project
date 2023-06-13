@@ -92,7 +92,6 @@ const EditProduct = () => {
         value={product.price}
       />
       <CategorySelect product={product} setProduct={setProduct} />
-
       <Button
         onClick={() => saveEditedProduct(product)}
         fullWidth
