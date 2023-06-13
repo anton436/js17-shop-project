@@ -10,19 +10,39 @@ import {
   RadioGroup,
   TextField,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useProducts } from "../../contexts/ProductContextProvider";
+import { useSearchParams } from "react-router-dom";
 
 const Sidebar = () => {
+  const { fetchByParams } = useProducts();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
   return (
     <Grid item md={3}>
       <Paper elevation={3} sx={{ p: 2 }}>
-        <TextField fullWidth label="search..." variant="standard" />
+        <TextField
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          fullWidth
+          label="search..."
+          variant="standard"
+        />
         <FormControl>
           <FormLabel id="demo-radio-buttons-group-label">Category</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
+            onChange={(e) => fetchByParams("category", e.target.value)}
           >
             <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel
@@ -47,6 +67,7 @@ const Sidebar = () => {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"
+            onChange={(e) => fetchByParams("_sort", e.target.value)}
           >
             <FormControlLabel value="All" control={<Radio />} label="All" />
             <FormControlLabel

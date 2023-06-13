@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import CategorySelect from "./CategorySelect";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
@@ -91,14 +92,7 @@ const EditProduct = () => {
         variant="outlined"
         value={product.price}
       />
-      <TextField
-        fullWidth
-        name="category"
-        label="category"
-        variant="outlined"
-        onChange={handleInp}
-        value={product.category}
-      />
+      <CategorySelect product={product} setProduct={setProduct} />
       <Button
         onClick={() => saveEditedProduct(product)}
         fullWidth
