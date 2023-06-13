@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Typography,
@@ -11,14 +11,26 @@ import {
 } from "@mui/material";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductSize from "./ProductSize";
+import ProductCount from "./ProductCount";
 
 const ProductDetail = () => {
   const { getProductDetails, productDetails } = useProducts();
   const { id } = useParams();
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     getProductDetails(id);
   }, []);
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
 
   return (
     <Box>
@@ -104,10 +116,6 @@ const ProductDetail = () => {
             <Typography variant="body2">
               Цена вкл. 20% НДС / Артикул 52252801
             </Typography>
-            <Typography variant="body2">
-              Online {productDetails?.online}
-            </Typography>
-            <Typography variant="body2">{productDetails?.color}</Typography>
             <Typography variant="body2" sx={{ marginTop: 3 }}>
               РАЗМЕР (ТАБЛИЦА РАЗМЕРОВ)
             </Typography>
@@ -120,7 +128,11 @@ const ProductDetail = () => {
                 <Typography variant="body2">КОЛ-ВО</Typography>
               </Grid>
               <Grid item xs={6} sm={8} md={9}>
-                {/* Вставьте компоненты или данные для выбора количества */}
+                <ProductCount
+                  quantity={quantity}
+                  handleIncrement={handleIncrement}
+                  handleDecrement={handleDecrement}
+                />
               </Grid>
             </Grid>
           </CardContent>
