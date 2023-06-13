@@ -17,7 +17,6 @@ export default function CategorySelect({ product, setProduct }) {
         id="demo-simple-select"
         defaultValue=""
         label="Category"
-        name="category"
         value={product.category}
         onChange={handleChange}
       >
