@@ -13,7 +13,6 @@ const AddProduct = () => {
     price: 0,
     category: '',
   });
-
   const { addProduct } = useProducts();
 
   const handleInp = (e) => {
