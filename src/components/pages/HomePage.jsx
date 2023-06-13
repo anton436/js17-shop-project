@@ -15,12 +15,12 @@ const HomePage = () => {
   const [accessories, setAccessories] = useState([]);
 
   useEffect(() => {
-    products.map((product) => {
-      if (product.category === "clothes") {
+    products.forEach((product) => {
+      if (product.category === "Clothes") {
         setClothes((prevClothes) => [...prevClothes, product]);
-      } else if (product.category === "shoes") {
+      } else if (product.category === "Shoes") {
         setShoes((prevShoes) => [...prevShoes, product]);
-      } else if (product.category === "accessories") {
+      } else if (product.category === "Accessories") {
         setAccessories((prevAccessories) => [...prevAccessories, product]);
       }
     });
@@ -28,7 +28,7 @@ const HomePage = () => {
   console.log(clothes);
   return (
     <div>
-      <Box sx={{ overflowX: "hidden", height: "auto" }}>
+      <Box sx={{ overflowX: "hidden" }}>
         <Box
           sx={{
             display: "flex",

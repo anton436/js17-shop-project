@@ -6,7 +6,7 @@
       "pic2": "---",
       "pic3": "---",
       "price": 400,
-      "category": "shoes",
+      "category": "Shoes",
       "id": 3
     },
     {
@@ -15,7 +15,7 @@
       "pic2": "--",
       "pic3": "--",
       "price": 500,
-      "category": "shoes",
+      "category": "Shoes",
       "id": 4
     },
     {
@@ -24,18 +24,62 @@
       "pic2": "----",
       "pic3": "---",
       "price": 1200,
-      "category": "accessories",
+      "category": "Accessories",
       "id": 6
     },
-
     {
       "title": "Толстовка",
       "pic1": "https://tvoe.ru/img/2c3ntrf/product/626/834/36/4620123020202.jpg",
       "pic2": "--",
       "pic3": "--",
       "price": 1200,
-      "category": "clothes",
+      "category": "Clothes",
       "id": 9
+    },
+    {
+      "title": "Толстовки",
+      "pic1": "data:image/jpeg;base64,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",
+      "pic2": "--",
+      "pic3": "--",
+      "price": 450,
+      "category": "Clothes",
+      "id": 10
+    },
+    {
+      "title": "Hudi",
+      "pic1": "https://shop-cdn1-2.vigbo.tech/shops/114929/products/20763103/images/2-32bf59c109d03dcebfe0b60a3ad3754c.jpg",
+      "pic2": "--",
+      "pic3": "--",
+      "price": 700,
+      "category": "Clothes",
+      "id": 11
+    },
+    {
+      "title": "Худи",
+      "pic1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm0CT7pUq65y0841tbJhxfA44Glu96SJXrG8V3Q4MZ&s",
+      "pic2": "--",
+      "pic3": "--",
+      "price": 700,
+      "category": "Clothes",
+      "id": 12
+    },
+    {
+      "title": "Худи",
+      "pic1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm0CT7pUq65y0841tbJhxfA44Glu96SJXrG8V3Q4MZ&s",
+      "pic2": "--",
+      "pic3": "--",
+      "price": 700,
+      "category": "Clothes",
+      "id": 13
+    },
+    {
+      "title": "Shoe",
+      "pic1": "data:image/jpeg;base64,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",
+      "pic2": "--",
+      "pic3": "--",
+      "price": 780,
+      "category": "Shoes",
+      "id": 14
     }
   ]
 }

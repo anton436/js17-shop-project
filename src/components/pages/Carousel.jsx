@@ -1,71 +1,49 @@
-// import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-// export default class PauseOnHover extends Component {
-//   render() {
-//     const { product } = this.props;
-//     var settings = {
-//       dots: true,
-//       infinite: true,
-//       slidesToShow: 3,
-//       slidesToScroll: 1,
-//       autoplay: true,
-//       autoplaySpeed: 3000,
-//       pauseOnHover: true,
-//       centerMode: true,
-//       arrows: true,
-//     };
-//     return (
-//       <Slider {...settings}>
-//         {product.map((item) => (
-//           <div>
-//             <img
-//               style={{ height: "300px", width: "150ps" }}
-//               src={item.pic1}
-//               alt={item.title}
-//             />
-//             <div>
-//               <h3>{item.title}</h3>
-//               <h3>{item.price}</h3>
-//             </div>
-//           </div>
-//         ))}
-//       </Slider>
-//     );
-//   }
-// }
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import React from "react";
+import "./styles/CarouselStyles.css";
 
-const Carousel = ({ product }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    centerMode: true,
-    arrows: true,
-  };
+// import required modules
+import { Keyboard, Pagination, Navigation } from "swiper";
+
+export default function App({ product }) {
   return (
-    <Slider {...settings}>
-      {product.map((item) => (
-        <div>
-          <img
-            style={{ height: "300px", width: "150ps" }}
-            src={item.pic1}
-            alt={item.title}
-          />
-          <div>
-            <h3>{item.title}</h3>
-            <h3>{item.price}</h3>
-          </div>
-        </div>
-      ))}
-    </Slider>
+    <>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        keyboard={{
+          enabled: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Keyboard, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {product.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div>
+              <img
+                style={{ height: "300px", width: "150ps" }}
+                src={item.pic1}
+                alt={item.title}
+              />
+              <div>
+                <h3>{item.title}</h3>
+                <h3>{item.price}</h3>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
-};
-
-export default Carousel;
+}

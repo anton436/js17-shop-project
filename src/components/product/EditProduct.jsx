@@ -2,6 +2,8 @@ import { Box, TextField, Typography, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useParams } from "react-router-dom";
+import { Category } from "@mui/icons-material";
+import CategorySelect from "./CategorySelect";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
@@ -90,14 +92,7 @@ const EditProduct = () => {
         onChange={handleInp}
         value={product.price}
       />
-      <TextField
-        fullWidth
-        name="category"
-        label="caregory"
-        variant="outlined"
-        onChange={handleInp}
-        value={product.category}
-      />
+      <CategorySelect product={product} setProduct={setProduct} />
       <Button
         fullWidth
         variant="outlined"
