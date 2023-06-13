@@ -1,22 +1,37 @@
-import { Box, Button, TextField, Typography } from '@mui/material';
-import React from 'react';
-import { useState } from 'react';
-import { useProducts } from '../../contexts/ProductContextProvider';
+import { Box, Button, TextField, Typography } from "@mui/material";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
-const AddProduct = () => {
+const EditProduct = () => {
   const [product, setProduct] = useState({
-    title: '',
-    pic1: '',
-    pic2: '',
-    pic3: '',
+    title: "",
+    pic1: "",
+    pic2: "",
+    pic3: "",
     price: 0,
-    category: '',
+    category: "",
   });
 
-  const { addProduct } = useProducts();
+  const { saveEditedProduct, getProductDetails, productDetails } =
+    useProducts();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getProductDetails(id);
+  }, []);
+
+  useEffect(() => {
+    if (productDetails) {
+      setProduct(productDetails);
+    }
+  }, [productDetails]);
 
   const handleInp = (e) => {
-    if (e.target.name === 'price') {
+    if (e.target.name === "price") {
       let obj = {
         ...product,
         [e.target.name]: Number(e.target.value),
@@ -32,9 +47,9 @@ const AddProduct = () => {
   };
   console.log(product);
   return (
-    <Box sx={{ width: '60vw', margin: '10vh auto' }}>
+    <Box sx={{ width: "60vw", margin: "10vh auto" }}>
       <Typography variant="h4" align="center">
-        ADMIN PAGE
+        EDIT PRODUCT
       </Typography>
       <TextField
         onChange={handleInp}
@@ -42,6 +57,7 @@ const AddProduct = () => {
         name="title"
         label="title"
         variant="outlined"
+        value={product.title}
       />
       <TextField
         onChange={handleInp}
@@ -49,6 +65,7 @@ const AddProduct = () => {
         name="pic1"
         label="picture 1"
         variant="outlined"
+        value={product.pic1}
       />
       <TextField
         onChange={handleInp}
@@ -56,6 +73,7 @@ const AddProduct = () => {
         name="pic2"
         label="picture 2"
         variant="outlined"
+        value={product.pic2}
       />
       <TextField
         onChange={handleInp}
@@ -63,6 +81,7 @@ const AddProduct = () => {
         name="pic3"
         label="picture 3"
         variant="outlined"
+        value={product.pic3}
       />
       <TextField
         onChange={handleInp}
@@ -70,6 +89,7 @@ const AddProduct = () => {
         name="price"
         label="price"
         variant="outlined"
+        value={product.price}
       />
       <TextField
         fullWidth
@@ -77,16 +97,18 @@ const AddProduct = () => {
         label="category"
         variant="outlined"
         onChange={handleInp}
+        value={product.category}
       />
       <Button
-        onClick={() => addProduct(product)}
+        onClick={() => saveEditedProduct(product)}
         fullWidth
         variant="outlined"
-        size="large">
-        ADD PRODUCT
+        size="large"
+      >
+        SAVE CHANGES
       </Button>
     </Box>
   );
 };
 
-export default AddProduct;
+export default EditProduct;
