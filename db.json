@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "title": "test111",
-      "pic1": "1",
-      "pic2": "2",
-      "pic3": "3",
-      "price": 22,
-      "category": "Shoes",
-      "id": 1
-    },
-    {
       "title": "test22",
       "pic1": "3",
       "pic2": "2",
