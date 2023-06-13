@@ -2,6 +2,7 @@ import { Box, Button, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import { useProducts } from '../../contexts/ProductContextProvider';
+import SelectCategory from './SelectCategory';
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -71,13 +72,7 @@ const AddProduct = () => {
         label="price"
         variant="outlined"
       />
-      <TextField
-        fullWidth
-        name="category"
-        label="category"
-        variant="outlined"
-        onChange={handleInp}
-      />
+      <SelectCategory product={product} setProduct={setProduct} />
       <Button
         onClick={() => addProduct(product)}
         fullWidth

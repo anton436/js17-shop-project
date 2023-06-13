@@ -6,4 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 import ProductContextProvider from './contexts/ProductContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+  <BrowserRouter>
+    {' '}
+    <ProductContextProvider>
+      <App />
+    </ProductContextProvider>
+  </BrowserRouter>
+);

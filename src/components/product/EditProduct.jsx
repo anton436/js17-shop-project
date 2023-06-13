@@ -1,18 +1,19 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useProducts } from "../../contexts/ProductContextProvider";
+import { Box, Button, TextField, Typography } from '@mui/material';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useProducts } from '../../contexts/ProductContextProvider';
+import SelectCategory from './SelectCategory';
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
-    title: "",
-    pic1: "",
-    pic2: "",
-    pic3: "",
+    title: '',
+    pic1: '',
+    pic2: '',
+    pic3: '',
     price: 0,
-    category: "",
+    category: '',
   });
 
   const { saveEditedProduct, getProductDetails, productDetails } =
@@ -31,7 +32,7 @@ const EditProduct = () => {
   }, [productDetails]);
 
   const handleInp = (e) => {
-    if (e.target.name === "price") {
+    if (e.target.name === 'price') {
       let obj = {
         ...product,
         [e.target.name]: Number(e.target.value),
@@ -47,7 +48,7 @@ const EditProduct = () => {
   };
   console.log(product);
   return (
-    <Box sx={{ width: "60vw", margin: "10vh auto" }}>
+    <Box sx={{ width: '60vw', margin: '10vh auto' }}>
       <Typography variant="h4" align="center">
         EDIT PRODUCT
       </Typography>
@@ -91,20 +92,12 @@ const EditProduct = () => {
         variant="outlined"
         value={product.price}
       />
-      <TextField
-        fullWidth
-        name="category"
-        label="category"
-        variant="outlined"
-        onChange={handleInp}
-        value={product.category}
-      />
+      <SelectCategory product={product} setProduct={setProduct} />
       <Button
         onClick={() => saveEditedProduct(product)}
         fullWidth
         variant="outlined"
-        size="large"
-      >
+        size="large">
         SAVE CHANGES
       </Button>
     </Box>

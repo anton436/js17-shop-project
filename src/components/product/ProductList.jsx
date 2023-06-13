@@ -3,12 +3,17 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useProducts } from '../../contexts/ProductContextProvider';
 import ProductCard from './ProductCard';
+import { useSearchParams } from 'react-router-dom';
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
+  const { searchParams, setSearchParams } = useSearchParams();
+
   useEffect(() => {
     getProducts();
-  }, []);
+    setPage(1);
+  }, [searchParams]);
+
   // pagination
   const [page, setPage] = useState(1);
   const itemsPerPage = 3;
