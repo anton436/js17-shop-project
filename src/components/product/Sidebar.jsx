@@ -10,14 +10,16 @@ import {
   RadioGroup,
   TextField,
 } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useProducts } from '../../contexts/ProductContextProvider';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useProducts } from '../../contexts/ProductContextProvider';
 
 const Sidebar = () => {
   const { fetchByParams } = useProducts();
 
-  const { searchParams, setSearchParams } = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get('q') || '');
 
   useEffect(() => {

@@ -73,7 +73,7 @@ const ProductContextProvider = ({ children }) => {
       search.set(query, value);
     }
 
-    const url = `${window.location.pathname}?${search.toString()}}`;
+    const url = `${window.location.pathname}?${search.toString()}`;
     navigate(url);
   };
 
@@ -85,6 +85,7 @@ const ProductContextProvider = ({ children }) => {
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
+
     fetchByParams,
   };
   return (

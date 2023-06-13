@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useState } from 'react';
 import { useProducts } from '../../contexts/ProductContextProvider';
-import SelectCategory from './SelectCategory';
+import CategorySelect from './CategorySelect';
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -72,7 +72,7 @@ const AddProduct = () => {
         label="price"
         variant="outlined"
       />
-      <SelectCategory product={product} setProduct={setProduct} />
+      <CategorySelect product={product} setProduct={setProduct} />
       <Button
         onClick={() => addProduct(product)}
         fullWidth

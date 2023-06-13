@@ -33,8 +33,17 @@
       "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801_01185x185.jpg?v4.28",
       "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801_02185x185.jpg?v4.28",
       "price": 3490,
-      "category": "Accessories",
+      "category": "Shoes",
       "id": 5
+    },
+    {
+      "title": "new",
+      "pic1": "1",
+      "pic2": "23",
+      "pic3": "3",
+      "price": 1234,
+      "category": "Shoes",
+      "id": 6
     }
   ]
 }
