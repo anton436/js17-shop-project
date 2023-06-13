@@ -15,7 +15,6 @@ const EditProduct = () => {
     price: 0,
     category: "",
   });
-
   const { saveEditedProduct, getProductDetails, productDetails } =
     useProducts();
 
