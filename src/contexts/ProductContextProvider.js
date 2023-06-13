@@ -1,8 +1,8 @@
-import axios from "axios";
-import React, { createContext, useContext, useReducer, useState } from "react";
+import axios from 'axios';
+import React, { createContext, useContext, useReducer, useState } from 'react';
 
-import { useNavigate } from "react-router-dom";
-import { ACTIONS, API } from "../helpers/consts";
+import { useNavigate } from 'react-router-dom';
+import { ACTIONS, API } from '../helpers/consts';
 
 export const productContext = createContext();
 
@@ -62,6 +62,18 @@ const ProductContextProvider = ({ children }) => {
     navigate(`/products`);
   };
 
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(window.location.search);
+    if (value === 'All') {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+
+    const url = `${window.location.pathname}?${search.toString()}}`;
+    navigate(url);
+  };
+
   const values = {
     addProduct,
     getProducts,
@@ -70,6 +82,7 @@ const ProductContextProvider = ({ children }) => {
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
+    fetchByParams,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
