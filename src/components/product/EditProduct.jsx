@@ -1,7 +1,9 @@
-import { Box, Button, TableBody, TextField, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useProducts } from "../../contexts/ProductContextProvider";
+import { Box, Button, TextField, Typography } from "@mui/material";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useProducts } from "../../contexts/ProductContextProvider";
 import CategorySelect from "./CategorySelect";
 
 const EditProduct = () => {
@@ -16,6 +18,7 @@ const EditProduct = () => {
 
   const { saveEditedProduct, getProductDetails, productDetails } =
     useProducts();
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -43,7 +46,8 @@ const EditProduct = () => {
       setProduct(obj);
     }
   };
-  https: return (
+
+  return (
     <Box
       sx={{
         paddingBottom: "3%",

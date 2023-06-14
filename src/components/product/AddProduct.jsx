@@ -1,9 +1,10 @@
 import { Box, Button, TableBody, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
-import { hover } from "@testing-library/user-event/dist/hover";
-import { WidthNormal } from "@mui/icons-material";
 import CategorySelect from "./CategorySelect";
+// import { hover } from "@testing-library/user-event/dist/hover";
+// import { WidthNormal } from "@mui/icons-material";
+
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -32,16 +33,9 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
-  //wallpapercave.com/wp/oMYCgbK.jpg
-  https: return (
-    <Box
-      sx={{
-        // backgroundImage:
-        //   "url(https://static.vecteezy.com/system/resources/previews/010/994/248/original/puma-logo-white-symbol-clothes-design-icon-abstract-football-illustration-with-black-background-free-vector.jpg)",
-        // backgroundSize: "100px",
-        paddingBottom: "3%",
-      }}
-    >
+  
+  return (
+    <Box  sx={{paddingBottom: "3%"}}>
       <Typography
         sx={{
           paddingTop: "2%",
@@ -144,7 +138,6 @@ const AddProduct = () => {
               color: "black",
               fontSize: "22px",
               fontWeight: "900",
-              // WebkitTextStroke: "2px black",
               fontFamily: "segoe ui",
               "&:hover": {
                 backgroundColor: "black",
@@ -161,7 +154,7 @@ const AddProduct = () => {
           </Button>
         </Box>
       </Box>
-    </Box>
+    <Box/>
   );
 };
 

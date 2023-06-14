@@ -13,13 +13,18 @@ export default function ProductCard({ item }) {
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={item.pic1} title="green iguana" />
+      <CardMedia
+        sx={{ height: 140 }}
+        image="/static/images/cards/contemplative-reptile.jpg"
+        title="green iguana"
+        onClick={() => navigate(`/details/${item.id}`)}
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {item.price}
+          {item.price} $
         </Typography>
       </CardContent>
       <CardActions>

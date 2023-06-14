@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useProducts } from "../../contexts/ProductContextProvider";
-import ProductCard from "./ProductCard";
 import { Box, Grid, Pagination } from "@mui/material";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import ProductCard from "./ProductCard";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
@@ -26,6 +27,7 @@ const ProductList = () => {
     const end = begin + itemsPerPage;
     return products.slice(begin, end);
   }
+
   // pagination
 
   return (

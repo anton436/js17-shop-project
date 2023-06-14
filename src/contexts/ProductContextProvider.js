@@ -1,12 +1,13 @@
-import React, { createContext, useContext, useReducer } from "react";
-import { ACTIONS, API } from "../helpers/consts";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { createContext, useContext, useReducer, useState } from "react";
 
-export const ProductContext = createContext();
+import { useNavigate } from "react-router-dom";
+import { ACTIONS, API } from "../helpers/consts";
+
+export const productContext = createContext();
 
 export const useProducts = () => {
-  return useContext(ProductContext);
+  return useContext(productContext);
 };
 
 const INIT_STATE = {
@@ -21,6 +22,7 @@ const reducer = (state = INIT_STATE, action) => {
 
     case ACTIONS.GET_PRODUCT_DETAILS:
       return { ...state, productDetails: action.payload };
+
     default:
       return state;
   }
@@ -41,13 +43,8 @@ const ProductContextProvider = ({ children }) => {
     dispatch({ type: ACTIONS.GET_PRODUCTS, payload: data });
   };
 
-  //! patch request (UPDATE PRODUCT)
-  const saveEditedProduct = async (editedProduct) => {
-    await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
-    navigate(`/products`);
-  };
-
   //! delete request (DELETE)
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
@@ -60,6 +57,12 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const fetchByParams = async (query, value) => {
+    //! patch request (UPDATE PRODUCT)
+    const saveEditedProduct = async (editedProduct) => {
+      await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
+      navigate(`/products`);
+    };
+
     const search = new URLSearchParams(window.location.search);
     if (value === "All") {
       search.delete(query);
@@ -74,8 +77,6 @@ const ProductContextProvider = ({ children }) => {
     navigate(url);
   };
 
-  // fetchByParam`s("category", "shoes");
-
   const values = {
     addProduct,
     getProducts,
@@ -87,7 +88,7 @@ const ProductContextProvider = ({ children }) => {
     fetchByParams,
   };
   return (
-    <ProductContext.Provider value={values}>{children}</ProductContext.Provider>
+    <productContext.Provider value={values}>{children}</productContext.Provider>
   );
 };
 

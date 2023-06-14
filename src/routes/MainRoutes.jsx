@@ -4,6 +4,9 @@ import AdminPage from "../pages/AdminPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import ProductPage from "../pages/ProductPage";
+
+import ProductDetails from "../components/ProductDetails/ProductDetails";
+
 import EditProductPage from "../pages/EditProductPage";
 
 const MainRoutes = () => {
@@ -33,12 +36,17 @@ const MainRoutes = () => {
       element: <EditProductPage />,
       id: 5,
     },
+    {
+      link: "/details/:id",
+      element: <ProductDetails />,
+      id: 6,
+    },
   ];
 
   return (
     <Routes>
       {PUBLIC_ROUTES.map((item) => (
-        <Route path={item.link} key={item.id} element={item.element} />
+        <Route path={item.link} element={item.element} key={item.id} />
       ))}
     </Routes>
   );

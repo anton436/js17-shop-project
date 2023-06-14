@@ -23,9 +23,8 @@ import { styled } from "@mui/system";
 const pages = [
   { name: "Одежда", link: "/", id: 1 },
   { name: "Правила PUMA", link: "/products", id: 2 },
-  { name: "ADMIN", link: "/admin", id: 3 },
-];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+]
+
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -54,7 +53,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Navbar() {
+
+function Navbar(){
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -87,6 +88,7 @@ function Navbar() {
       >
         <Toolbar disableGutters sx={{ width: "100%" }}>
           {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+
           <Typography
             variant="h6"
             noWrap
@@ -102,11 +104,15 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
+
             <img
               src="https://www.transparentpng.com/thumb/puma-logo/It9NZf-puma-logo-transparent.png"
               alt=""
               width="40px"
             />
+
+            LOGO
+
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -181,6 +187,8 @@ function Navbar() {
                       color: "white",
                     },
                   }}
+                  sx={{ my: 2, color: "white", display: "block" }}
+
                 >
                   {page.name}
                 </Button>
@@ -225,6 +233,11 @@ function Navbar() {
                   width="45px"
                 />
                 {/* <Avatar alt="." src="profile.png" /> */}
+          <Box/>
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -254,5 +267,5 @@ function Navbar() {
       </Container>
     </AppBar>
   );
-}
+};
 export default Navbar;
