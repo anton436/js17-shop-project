@@ -13,15 +13,49 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
+import { Search } from "@mui/icons-material";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+
+import { TextField } from "@mui/material";
+import { styled } from "@mui/system";
 
 const pages = [
-  { name: "Home", link: "/", id: 1 },
-  { name: "Products", link: "/products", id: 2 },
-  { name: "ADMIN", link: "/admin", id: 3 },
-];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  { name: "Одежда", link: "/", id: 1 },
+  { name: "Правила PUMA", link: "/products", id: 2 },
+]
 
-function Navbar() {
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+}));
+
+
+function Navbar(){
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -41,10 +75,20 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+    <AppBar position="static" sx={{ backgroundColor: "#222" }}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          backgroundColor: "#222",
+          height: "85px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Toolbar disableGutters sx={{ width: "100%" }}>
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+
           <Typography
             variant="h6"
             noWrap
@@ -60,7 +104,15 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
+
+            <img
+              src="https://www.transparentpng.com/thumb/puma-logo/It9NZf-puma-logo-transparent.png"
+              alt=""
+              width="40px"
+            />
+
             LOGO
+
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -125,14 +177,63 @@ function Navbar() {
               <Link key={page.id} to={page.link}>
                 <Button
                   onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontSize: "18px",
+                    color: "gray",
+                    "&:hover": {
+                      color: "white",
+                    },
+                  }}
                   sx={{ my: 2, color: "white", display: "block" }}
+
                 >
                   {page.name}
                 </Button>
               </Link>
             ))}
           </Box>
+          <Box
+            sx={{
+              border: "1px solid",
+              borderColor: "gray",
+              display: "flex",
+              alignItems: "center",
+              width: "300px",
+              height: "40px",
+            }}
+          >
+            <SearchIcon sx={{ marginLeft: "10px" }} />
 
+            <TextField
+              placeholder="поиск..."
+              sx={{
+                "& input": {
+                  color: "white",
+                },
+              }}
+            />
+            {/* <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              /> */}
+          </Box>
+          <Box></Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0, marginLeft: "10px" }}
+              >
+                <img
+                  src="https://cdn3.iconfinder.com/data/icons/2px-stroke-simple-line/24/person-key-512.png"
+                  alt=""
+                  width="45px"
+                />
+                {/* <Avatar alt="." src="profile.png" /> */}
+          <Box/>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -166,5 +267,5 @@ function Navbar() {
       </Container>
     </AppBar>
   );
-}
+};
 export default Navbar;

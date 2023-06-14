@@ -10,6 +10,7 @@ import {
   RadioGroup,
   TextField,
 } from "@mui/material";
+
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -37,7 +38,9 @@ const Sidebar = () => {
           fullWidth
           label="search..."
           variant="standard"
+          sx={{ p: 2 }}
         />
+
         <FormControl>
           <FormLabel id="demo-radio-buttons-group-label">Category</FormLabel>
           <RadioGroup
@@ -60,6 +63,7 @@ const Sidebar = () => {
             />
           </RadioGroup>
         </FormControl>
+
         <Divider />
         <FormControl>
           <FormLabel id="demo-radio-buttons-group-label">
@@ -77,6 +81,7 @@ const Sidebar = () => {
               control={<Radio />}
               label="Low to High"
             />
+
             <FormControlLabel
               value="desc"
               control={<Radio />}
