@@ -11,8 +11,10 @@ import "./styles/CarouselStyles.css";
 
 // import required modules
 import { Keyboard, Pagination, Navigation } from "swiper";
+import { useNavigate } from "react-router-dom";
 
 export default function App({ product }) {
+  const navigate = useNavigate();
   return (
     <>
       <Swiper
@@ -35,6 +37,7 @@ export default function App({ product }) {
                 style={{ height: "300px", width: "150ps" }}
                 src={item.pic1}
                 alt={item.title}
+                onClick={() => navigate(`/details/${item.id}`)}
               />
               <div>
                 <h3>{item.title}</h3>
