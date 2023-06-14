@@ -1,93 +1,112 @@
 {
   "products": [
     {
-      "title": "Puma1",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/53924601.jpg?v4.28",
-      "pic2": "",
-      "pic3": "",
-      "price": 8000,
-      "category": "Accessories",
-      "id": 1
-    },
-    {
-      "title": "Puma2",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/53924601.jpg?v4.28",
-      "pic2": "",
-      "pic3": "",
-      "price": 74,
+      "title": "Samat",
+      "pic1": "https://images.pexels.com/photos/4046313/pexels-photo-4046313.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "pic2": "https://images.pexels.com/photos/3119215/pexels-photo-3119215.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "pic3": "https://images.pexels.com/photos/4546003/pexels-photo-4546003.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 9999,
       "category": "Clothes",
-      "id": 2
+      "id": 4
     },
     {
-      "title": "Puma3",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/53924601.jpg?v4.28",
-      "pic2": "",
-      "pic3": "",
-      "price": 741
-    },
-    {
-      "title": "test111",
-      "pic1": "1",
-      "pic2": "2",
-      "pic3": "3",
-      "price": 22,
+      "title": "Футболка PUMA Performance Femme SS TEE Q4 AW22",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801_01185x185.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801_02185x185.jpg?v4.28",
+      "price": 3490,
       "category": "Shoes",
-      "id": 1
-    },
-    {
-      "title": "test22",
-      "pic1": "3",
-      "pic2": "2",
-      "pic3": "1",
-      "price": 55555,
-      "category": "Accessories",
-      "id": 3
-    },
-    {
-      "title": "MIKE",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
-      "pic2": "j",
-      "pic3": "j",
-      "price": 41,
-      "category": "jjjj",
       "id": 5
     },
     {
-      "title": "PUMA",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
-      "pic2": "j",
-      "pic3": "j",
-      "price": 41,
-      "category": "jjjj",
-      "id": 6
-    },
-    {
-      "title": "PUMA",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
-      "pic2": "j",
-      "pic3": "j",
-      "price": 41,
-      "category": "jjjj",
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Shoes",
       "id": 7
     },
     {
-      "title": "jtest",
-      "pic1": "1",
-      "pic2": "2",
-      "pic3": "3",
-      "price": 852,
-      "category": "Accessories",
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Shoes",
       "id": 8
     },
     {
-      "title": "jtest",
-      "pic1": "1",
-      "pic2": "2",
-      "pic3": "3",
-      "price": 852,
-      "category": "",
-      "caregory": "Accessories",
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Shoes",
       "id": 9
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Shoes",
+      "id": 10
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Clothes",
+      "id": 11
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Clothes",
+      "id": 12
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Clothes",
+      "id": 13
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Accessories",
+      "id": 14
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Accessories",
+      "id": 15
+    },
+    {
+      "title": "aaaaa",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
+      "price": 33535,
+      "category": "Accessories",
+      "id": 16
     }
   ]
 }

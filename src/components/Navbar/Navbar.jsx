@@ -234,7 +234,7 @@ function Navbar() {
                 vertical: "top",
                 horizontal: "right",
               }}
-              keepMounted
+                Mounted
               transformOrigin={{
                 vertical: "top",
                 horizontal: "right",
