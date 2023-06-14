@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProductPage from '../pages/ProductPage';
 import ProductDetails from '../components/ProductDetails/ProductDetails';
 import EditProductPage from '../pages/EditProductPage';
+import CartPage from '../pages/CartPage';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -39,6 +40,11 @@ const MainRoutes = () => {
       link: '/details/:id',
       element: <ProductDetails />,
       id: 6,
+    },
+    {
+      link: '/cart',
+      element: <CartPage />,
+      id: 7,
     },
   ];
   return (
