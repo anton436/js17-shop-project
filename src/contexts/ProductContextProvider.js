@@ -84,7 +84,6 @@ const ProductContextProvider = ({ children }) => {
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
-
     fetchByParams,
   };
   return (
