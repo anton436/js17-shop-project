@@ -56,13 +56,13 @@ const ProductContextProvider = ({ children }) => {
     dispatch({ type: ACTIONS.GET_PRODUCT_DETAILS, payload: data });
   };
 
-  const fetchByParams = async (query, value) => {
-    //! patch request (UPDATE PRODUCT)
-    const saveEditedProduct = async (editedProduct) => {
-      await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
-      navigate(`/products`);
-    };
+  //! patch request (UPDATE PRODUCT)
+  const saveEditedProduct = async (editedProduct) => {
+    await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
+    navigate(`/products`);
+  };
 
+  const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
     if (value === "All") {
       search.delete(query);

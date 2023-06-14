@@ -1,12 +1,8 @@
-
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 import "./styles/Styles.css";
 import { useProducts } from "../contexts/ProductContextProvider";
-import React from "react";
-
-
 
 const HomePage = () => {
   const { getProducts, products } = useProducts();

@@ -5,7 +5,6 @@ import CategorySelect from "./CategorySelect";
 // import { hover } from "@testing-library/user-event/dist/hover";
 // import { WidthNormal } from "@mui/icons-material";
 
-
 const AddProduct = () => {
   const [product, setProduct] = useState({
     title: "",
@@ -33,9 +32,9 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
-  
+
   return (
-    <Box  sx={{paddingBottom: "3%"}}>
+    <Box sx={{ paddingBottom: "3%" }}>
       <Typography
         sx={{
           paddingTop: "2%",
@@ -154,7 +153,7 @@ const AddProduct = () => {
           </Button>
         </Box>
       </Box>
-    <Box/>
+    </Box>
   );
 };
 
