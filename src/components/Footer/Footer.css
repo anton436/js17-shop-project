@@ -1,0 +1,233 @@
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #222222;
+  color: #818181;
+}
+
+.footer__logo {
+  /* background-color: whitesmoke; */
+  width: 4rem;
+  height: auto;
+  margin-top: -3rem;
+  margin-left: 2rem;
+
+  margin-bottom: -5rem;
+}
+
+.footer__toprigth {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  margin-left: 73rem;
+}
+
+.footer__toprigth_text {
+  margin-top: 0.3rem;
+  color: #818181;
+  margin-bottom: 0rem;
+}
+
+.footer__toprigth_input {
+  background-color: transparent;
+  border: 1px solid grey;
+  width: 20rem;
+  height: 2rem;
+}
+
+.lines {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 13rem;
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+  margin-right: 0;
+}
+
+.center {
+  width: 51rem;
+  margin-left: 3rem;
+  margin-top: 2.5rem;
+  margin-right: 0;
+}
+
+.right {
+  width: 20.4rem;
+  margin-left: 3.6rem;
+  margin-top: 2.5rem;
+  margin-right: 0;
+}
+
+.info {
+  display: flex;
+}
+
+.footer__rules_title {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: white;
+  font-weight: bold;
+}
+
+.footer__menu {
+  width: 16rem;
+  height: 14rem;
+}
+
+.footer__menu-items {
+  padding-left: 0;
+  margin-left: 2rem;
+  list-style-type: none;
+  color: #818181;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.footer__menu-items_item-link {
+  text-decoration: none;
+  color: grey;
+}
+
+.footer__menu-items_item-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.footer__contacts {
+  width: auto;
+  height: 10rem;
+}
+
+.footer__contacts_title {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: white;
+  font-weight: bold;
+}
+
+.footer__contacts_list1 {
+  margin-top: 1.1rem;
+  width: 16rem;
+  margin-left: 2rem;
+  list-style-type: none;
+  color: #818181;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.footer__contacts_list2 {
+  margin-left: 20rem;
+  margin-top: -12.7rem;
+  list-style-type: none;
+  color: #818181;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.footer__contacts_list3 {
+  margin-top: 1.1rem;
+  margin-left: 38rem;
+  margin-top: -12.7rem;
+  list-style-type: none;
+  color: #818181;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.footer__title {
+  margin-left: 7rem;
+  margin-top: 3.7rem;
+  margin-bottom: 0.7rem;
+  color: #818181;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+.socials {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-left: -9.6rem;
+  margin-top: 9.3rem;
+}
+
+.facebook {
+  width: 1.3rem;
+  height: auto;
+}
+
+.instagram {
+  width: 1.6rem;
+  height: auto;
+  margin-left: 0.2rem;
+  margin-top: -0.1rem;
+}
+
+.line-end {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border: 1px solid #818181;
+}
+
+.footer__end {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.footer__end_copyright {
+  font-size: 0.75em;
+  color: white;
+}
+
+.footer__copyright-payments {
+  display: flex;
+  flex-direction: row;
+  margin-left: 17rem;
+  font-size: 14px;
+  color: white;
+}
+
+.footer__copyright-payments_text {
+  margin-top: 0.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.cards {
+  width: 4rem;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.visa {
+  margin-left: 0.7rem;
+}
+
+.mastercard {
+  width: 100;
+  margin-left: 1rem;
+}

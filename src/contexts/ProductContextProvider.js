@@ -32,15 +32,15 @@ const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
 
+  //! post request (CREATE)
+  const addProduct = async (newProduct) => {
+    await axios.post(API, newProduct);
+  };
+
   //! get request (READ)
   const getProducts = async () => {
     const { data } = await axios(`${API}${window.location.search}`);
     dispatch({ type: ACTIONS.GET_PRODUCTS, payload: data });
-  };
-
-  //! post request (CREATE)
-  const addProduct = async (newProduct) => {
-    await axios.post(API, newProduct);
   };
 
   //! delete request (DELETE)
@@ -62,7 +62,7 @@ const ProductContextProvider = ({ children }) => {
     navigate(`/products`);
   };
 
-  const fetchByParams = (query, value) => {
+  const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
     if (value === "All") {
       search.delete(query);
@@ -72,6 +72,7 @@ const ProductContextProvider = ({ children }) => {
     } else {
       search.set(query, value);
     }
+
     const url = `${window.location.pathname}?${search.toString()}`;
     navigate(url);
   };
