@@ -7,15 +7,19 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useCart } from "../../contexts/CartContextProvider";
+import { IconButton } from "@mui/material";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
+  const { addProductToCart } = useCart();
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={item.pic1}
         title="green iguana"
         onClick={() => navigate(`/details/${item.id}`)}
       />
@@ -31,6 +35,10 @@ export default function ProductCard({ item }) {
         <Button size="small" onClick={() => deleteProduct(item.id)}>
           Delete
         </Button>
+        <IconButton onClick={() => addProductToCart(item)}>
+          <AddShoppingCartIcon />
+        </IconButton>
+
         <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </Button>
