@@ -2,8 +2,8 @@ import { Box, Grid, Pagination } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
+import { useProducts } from "../../contexts/ProductContextProvider";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();

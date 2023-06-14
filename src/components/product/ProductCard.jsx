@@ -7,9 +7,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
+import { IconButton } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useCart } from "../../contexts/CartContextProvider";
-import { IconButton } from "@mui/material";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
@@ -38,7 +38,6 @@ export default function ProductCard({ item }) {
         <IconButton onClick={() => addProductToCart(item)}>
           <AddShoppingCartIcon />
         </IconButton>
-
         <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </Button>
