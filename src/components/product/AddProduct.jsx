@@ -1,0 +1,168 @@
+import { Box, Button, TableBody, TextField, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { useProducts } from "../../contexts/ProductContextProvider";
+import { hover } from "@testing-library/user-event/dist/hover";
+import { WidthNormal } from "@mui/icons-material";
+import CategorySelect from "./CategorySelect";
+
+const AddProduct = () => {
+  const [product, setProduct] = useState({
+    title: "",
+    pic1: "",
+    pic2: "",
+    pic3: "",
+    price: 0,
+    category: "",
+  });
+
+  const { addProduct } = useProducts();
+
+  const handleInp = (e) => {
+    if (e.target.name === "price") {
+      let obj = {
+        ...product,
+        [e.target.name]: Number(e.target.value),
+      };
+      setProduct(obj);
+    } else {
+      let obj = {
+        ...product,
+        [e.target.name]: e.target.value,
+      };
+      setProduct(obj);
+    }
+  };
+  //wallpapercave.com/wp/oMYCgbK.jpg
+  https: return (
+    <Box
+      sx={{
+        // backgroundImage:
+        //   "url(https://static.vecteezy.com/system/resources/previews/010/994/248/original/puma-logo-white-symbol-clothes-design-icon-abstract-football-illustration-with-black-background-free-vector.jpg)",
+        // backgroundSize: "100px",
+        paddingBottom: "3%",
+      }}
+    >
+      <Typography
+        sx={{
+          paddingTop: "2%",
+          color: "white",
+          WebkitTextStroke: "3px black",
+          fontWeight: "900",
+          fontSize: "44px",
+        }}
+        variant="h4"
+        align="center"
+      >
+        ADMIN PAGE
+      </Typography>
+      <Box
+        sx={{
+          width: "60vw",
+          margin: "10px auto",
+          backgroundColor: "red",
+          padding: "5% 5%",
+          boxShadow: "0px 0px 21px 15px rgba(65, 40, 40, 0.2)",
+        }}
+      >
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="title"
+          label="title"
+          variant="outlined"
+        />
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic1"
+          label="pic1"
+          variant="outlined"
+        />
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic2"
+          label="pic2"
+          variant="outlined"
+        />
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic3"
+          label="pic3"
+          variant="outlined"
+        />
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="price"
+          label="price"
+          variant="outlined"
+        />
+        <CategorySelect product={product} setProduct={setProduct} />
+
+        <Box sx={{ backgroundColor: "orange", borderRadius: "5px" }}>
+          <Button
+            sx={{
+              backgroundColor: "white",
+              borderRadius: "5px",
+              color: "black",
+              fontSize: "22px",
+              fontWeight: "900",
+              // WebkitTextStroke: "2px black",
+              fontFamily: "segoe ui",
+              "&:hover": {
+                backgroundColor: "black",
+                color: "white",
+              },
+            }}
+            onClick={() => addProduct(product)}
+            fullWidth
+            variant="outlined"
+            size="large"
+            className="admin__button"
+          >
+            ADD PRODUCT
+          </Button>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export default AddProduct;
