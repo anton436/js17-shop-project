@@ -9,10 +9,10 @@ import CartContextProvider from './contexts/CartContextProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <ProductContextProvider>
-      <CartContextProvider>
+    <CartContextProvider>
+      <ProductContextProvider>
         <App />
-      </CartContextProvider>
-    </ProductContextProvider>
+      </ProductContextProvider>
+    </CartContextProvider>
   </BrowserRouter>
 );

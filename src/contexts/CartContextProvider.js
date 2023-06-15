@@ -2,8 +2,8 @@ import React, { createContext, useContext, useReducer } from 'react';
 import { ACTIONS } from '../helpers/consts';
 import { calcTotalPrice } from '../helpers/functions';
 
-export const cartConext = createContext();
-export const useCart = () => useContext(cartConext);
+export const cartContext = createContext();
+export const useCart = () => useContext(cartContext);
 
 const INIT_STATE = {
   cart: JSON.parse(localStorage.getItem('cart')),
@@ -13,7 +13,9 @@ const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case ACTIONS.GET_CART:
       return { ...state, cart: action.payload };
+
     default:
+      return state;
   }
 };
 
@@ -31,7 +33,6 @@ const CartContextProvider = ({ children }) => {
           totalPrice: 0,
         })
       );
-
       cart = {
         products: [],
         totalPrice: 0,
@@ -43,9 +44,8 @@ const CartContextProvider = ({ children }) => {
 
   const addProductToCart = (product) => {
     let cart = JSON.parse(localStorage.getItem('cart'));
-
     if (!cart) {
-      cart = { product: [], totalPrice: 0 };
+      cart = { products: [], totalPrice: 0 };
     }
     let newProduct = {
       item: product,
@@ -66,12 +66,13 @@ const CartContextProvider = ({ children }) => {
     }
 
     cart.totalPrice = calcTotalPrice(cart.products);
-    localStorage.setItem('cart', JSON.stringify('cart'));
+
+    localStorage.setItem('cart', JSON.stringify(cart));
     dispatch({ type: ACTIONS.GET_CART, payload: cart });
   };
 
   const values = { getCart, addProductToCart, cart: state.cart };
-  return <cartConext.Provider value={values}>{children}</cartConext.Provider>;
+  return <cartContext.Provider value={values}>{children}</cartContext.Provider>;
 };
 
 export default CartContextProvider;
