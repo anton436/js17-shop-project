@@ -19,6 +19,11 @@ import InputBase from "@mui/material/InputBase";
 
 import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
+import BadgedCartIcon from "./BadgedCartIcon";
+import { useCart } from "../../contexts/CartContextProvider";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getCountProductsInCart } from "../../helpers/functions";
 
 const pages = [
   { name: "Одежда", link: "/", id: 1 },
@@ -72,6 +77,12 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const [count, setCount] = useState(0);
+  const { addProductToCart } = useCart();
+  useEffect(() => {
+    setCount(getCountProductsInCart());
+  }, [addProductToCart]);
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
@@ -207,6 +218,7 @@ function Navbar() {
                 },
               }}
             />
+
             {/* <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
@@ -249,6 +261,9 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
+          <Link to="/cart">
+            <BadgedCartIcon count={count} />
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>

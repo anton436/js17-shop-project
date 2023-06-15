@@ -23,7 +23,8 @@
       "pic1": "https://pumakyrgyzstan.kg/images/products/53924601.jpg?v4.28",
       "pic2": "",
       "pic3": "",
-      "price": 741
+      "price": 741,
+      "id": 3
     },
     {
       "title": "test111",
@@ -32,7 +33,7 @@
       "pic3": "3",
       "price": 22,
       "category": "Shoes",
-      "id": 1
+      "id": 4
     },
     {
       "title": "test22",
@@ -41,19 +42,10 @@
       "pic3": "1",
       "price": 55555,
       "category": "Accessories",
-      "id": 3
-    },
-    {
-      "title": "MIKE",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
-      "pic2": "j",
-      "pic3": "j",
-      "price": 41,
-      "category": "jjjj",
       "id": 5
     },
     {
-      "title": "PUMA",
+      "title": "MIKE",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
       "pic2": "j",
       "pic3": "j",
@@ -71,13 +63,22 @@
       "id": 7
     },
     {
+      "title": "PUMA",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
+      "pic2": "j",
+      "pic3": "j",
+      "price": 41,
+      "category": "jjjj",
+      "id": 8
+    },
+    {
       "title": "jtest",
       "pic1": "1",
       "pic2": "2",
       "pic3": "3",
       "price": 852,
       "category": "Accessories",
-      "id": 8
+      "id": 9
     },
     {
       "title": "jtest",
@@ -87,7 +88,7 @@
       "price": 852,
       "category": "",
       "caregory": "Accessories",
-      "id": 9
+      "id": 10
     }
   ]
 }

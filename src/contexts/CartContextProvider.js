@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { ACTIONS } from "../helpers/consts";
-import { calcTotalPrice } from "../helpers/functions";
+import { calcSubPrice, calcTotalPrice } from "../helpers/functions";
 
 export const cartContext = createContext();
 export const useCart = () => useContext(cartContext);
@@ -71,7 +71,52 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: ACTIONS.GET_CART, payload: cart });
   };
 
-  const values = { getCart, addProductToCart, cart: state.cart };
+  const checkProductInCart = (id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    if (cart) {
+      let newCart = cart.products.filter((elem) => elem.item.id === id);
+      return newCart.length > 0 ? true : false;
+    }
+  };
+
+  const changeProductCount = (count, id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+    cart.products = cart.products.map((product) => {
+      if (product.item.id === id) {
+        product.count = count;
+        product.subPrice = calcSubPrice(product);
+      }
+      return product;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch({
+      type: ACTIONS.GET_CART,
+      payload: cart,
+    });
+  };
+
+  const deleteCartProduct = (id) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = cart.products.filter((elem) => elem.item.id !== id);
+    cart.totalPrice = calcTotalPrice(cart.products);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch({ type: ACTIONS.GET_CART, payload: cart });
+  };
+
+  const values = {
+    cart: state.cart,
+    getCart,
+    addProductToCart,
+
+    checkProductInCart,
+    changeProductCount,
+    deleteCartProduct,
+  };
   return <cartContext.Provider value={values}>{children}</cartContext.Provider>;
 };
 
