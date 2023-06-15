@@ -1,10 +1,10 @@
-import "./Footer.css";
-import React from "react";
-import logo from "./imgs/logo.jpeg";
-import facebook from "./imgs/facebook.svg";
-import instagram from "./imgs/instagram.svg";
-import mastercard from "./imgs/mastercard.jpeg";
-import visa from "./imgs/visa.jpeg";
+import './Footer.css';
+import React from 'react';
+import logo from './imgs/logo.jpeg';
+import facebook from './imgs/facebook.svg';
+import instagram from './imgs/instagram.svg';
+import mastercard from './imgs/mastercard.jpeg';
+import visa from './imgs/visa.jpeg';
 
 function Footer() {
   return (
@@ -42,8 +42,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/vacancies"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/vacancies">
                   Вакансии
                 </a>
               </li>
@@ -51,8 +50,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/podlinnost-tovara"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/podlinnost-tovara">
                   Подлинность товара
                 </a>
               </li>
@@ -60,8 +58,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/terms-and-conditions"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/terms-and-conditions">
                   Условия использования
                 </a>
               </li>
@@ -69,8 +66,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/rules"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/rules">
                   Система скидок
                 </a>
               </li>
@@ -78,8 +74,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/delivery"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/delivery">
                   Оплата и доставка
                 </a>
               </li>
@@ -87,8 +82,7 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/warranty"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/warranty">
                   Гарантийные условия
                 </a>
               </li>
@@ -96,16 +90,14 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/return"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/return">
                   Политика возврата и обмена
                 </a>
               </li>
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/checkout"
-                >
+                  href="https://pumakyrgyzstan.kg/ru/page/checkout">
                   Политика Конфиденциальности и безопасности
                 </a>
               </li>
@@ -127,7 +119,7 @@ function Footer() {
             <br />
             <strong>
               пр. Чуй, 127 <br />
-              (ТЦ "1 000 мелочей"){" "}
+              (ТЦ "1 000 мелочей"){' '}
             </strong>
             <br />
             <strong>
