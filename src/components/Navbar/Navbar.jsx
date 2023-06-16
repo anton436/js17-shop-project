@@ -24,13 +24,15 @@ import { useCart } from "../../contexts/CartContextProvider";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getCountProductsInCart } from "../../helpers/functions";
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { ADMIN } from "../../helpers/consts";
 
 const pages = [
   { name: "Одежда", link: "/", id: 1 },
   { name: "Правила PUMA", link: "/products", id: 2 },
-  { name: "ADMIN", link: "/admin", id: 3 },
+  // { name: "ADMIN", link: "/admin", id: 3 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard"];
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -83,6 +85,11 @@ function Navbar() {
   useEffect(() => {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
+
+  const {
+    handleLogout,
+    user: { email },
+  } = useAuth();
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
@@ -156,6 +163,13 @@ function Navbar() {
                   </MenuItem>
                 </Link>
               ))}
+              {email === ADMIN ? (
+                <Link to="/admin">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">ADMIN</Typography>
+                  </MenuItem>
+                </Link>
+              ) : null}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -197,6 +211,25 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
+            {email === ADMIN ? (
+              <Link to="/admin">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontSize: "18px",
+                    color: "gray",
+                    "&:hover": {
+                      color: "white",
+                    },
+                  }}
+                >
+                  ADMIN
+                </Button>
+              </Link>
+            ) : null}
           </Box>
           <Box
             sx={{
@@ -254,11 +287,25 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              {email ? (
+                <MenuItem>
+                  <Typography textAlign="center">hello, {email}!</Typography>
+                </MenuItem>
+              ) : null}
+
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem
+                onClick={() => {
+                  handleCloseUserMenu();
+                  handleLogout();
+                }}
+              >
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <Link to="/cart">
