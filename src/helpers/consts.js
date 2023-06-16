@@ -5,3 +5,5 @@ export const ACTIONS = {
   GET_PRODUCT_DETAILS: "GET_PRODUCT_DETAILS",
   GET_CART: "GET_CART",
 };
+
+export const ADMIN = "yeees.nooo02@gmail.com";

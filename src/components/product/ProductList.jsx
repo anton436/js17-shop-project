@@ -40,7 +40,7 @@ const ProductList = () => {
         }}
       >
         {currentData().map((item) => (
-          <ProductCard key={item.id} item={item} />
+          <ProductCard key={item.id} item={item} sx />
         ))}
       </Box>
       <Pagination count={count} page={page} onChange={handleChange} />
