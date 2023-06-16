@@ -127,7 +127,15 @@ const AddProduct = () => {
           label="price"
           variant="outlined"
         />
-        <CategorySelect product={product} setProduct={setProduct} />
+        <Box
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "10px",
+          }}
+        >
+          <CategorySelect product={product} setProduct={setProduct} />
+        </Box>
 
         <Box sx={{ backgroundColor: "orange", borderRadius: "5px" }}>
           <Button

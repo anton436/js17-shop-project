@@ -13,7 +13,7 @@ import { useCart } from "../../contexts/CartContextProvider";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
-  const { addProductToCart } = useCart();
+  const { addProductToCart, checkProductCart } = useCart();
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -35,12 +35,14 @@ export default function ProductCard({ item }) {
         <Button size="small" onClick={() => deleteProduct(item.id)}>
           Delete
         </Button>
+        <IconButton onClick={() => addProductToCart(item)}>
+          <AddShoppingCartIcon
+            color={checkProductCart(item.id) ? "primary" : ""}
+          />
+        </IconButton>
         <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
           Edit
         </Button>
-        <IconButton onClick={() => addProductToCart(item)}>
-          <AddShoppingCartIcon />
-        </IconButton>
       </CardActions>
     </Card>
   );

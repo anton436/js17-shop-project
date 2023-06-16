@@ -61,6 +61,7 @@ const ProductContextProvider = ({ children }) => {
     await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
     navigate(`/products`);
   };
+
   const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
     if (value === "All") {
