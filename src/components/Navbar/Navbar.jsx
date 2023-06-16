@@ -17,8 +17,13 @@ import { Search } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 
-import { TextField } from "@mui/material";
+import { Badge, TextField } from "@mui/material";
 import { styled } from "@mui/system";
+import BadgedCarticon from "./BadgedCarticon";
+import { useCart } from "../../contexts/CartContextProvider";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getCountProductsInCart } from "../../helpers/functions";
 
 const pages = [
   { name: "Одежда", link: "/", id: 1 },
@@ -72,6 +77,12 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const [count, setCount] = useState(0);
+  const { addProductToCart } = useCart();
+  useEffect(() => {
+    setCount(getCountProductsInCart());
+  }, [addProductToCart]);
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
@@ -249,6 +260,9 @@ function Navbar() {
               ))}
             </Menu>
           </Box>
+          <Link to="/cart">
+            <BadgedCarticon count={count} />
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
