@@ -15,13 +15,13 @@ function Footer() {
         className="footer__logo"
       />
 
-      <div className="footer__toprigth">
-        <p className="footer__toprigth_text">
+      <div className="footer__topright">
+        <p className="footer__topright_text">
           Самые актуальные предложения и акции!
         </p>
         <br />
         <input
-          className="footer__toprigth_input"
+          className="footer__topright_input"
           type="text"
           placeholder="  Email*"
         />

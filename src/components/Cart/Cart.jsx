@@ -81,7 +81,7 @@ export default function Cart() {
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice}</Button>
+      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
     </TableContainer>
   );
 }

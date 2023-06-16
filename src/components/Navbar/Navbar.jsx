@@ -228,6 +228,7 @@ function Navbar() {
               }}
               onChange={(e) => setSearch(e.target.value)}
             />
+
             {/* <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}

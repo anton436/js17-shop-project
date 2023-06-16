@@ -89,7 +89,6 @@ const CartContextProvider = ({ children }) => {
       }
       return product;
     });
-
     cart.totalPrice = calcTotalPrice(cart.products);
 
     localStorage.setItem("cart", JSON.stringify(cart));

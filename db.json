@@ -19,6 +19,7 @@
       "id": 2
     },
     {
+<<<<<<< HEAD
       "title": "Samat",
       "pic1": "https://images.pexels.com/photos/4046313/pexels-photo-4046313.jpeg?auto=compress&cs=tinysrgb&w=600",
       "pic2": "https://images.pexels.com/photos/3119215/pexels-photo-3119215.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -134,6 +135,78 @@
       "price": 33535,
       "category": "Accessories",
       "id": 16
+=======
+      "title": "Puma3",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/53924601.jpg?v4.28",
+      "pic2": "",
+      "pic3": "",
+      "price": 741,
+      "id": 3
+    },
+    {
+      "title": "test111",
+      "pic1": "1",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 22,
+      "category": "Shoes",
+      "id": 4
+    },
+    {
+      "title": "test22",
+      "pic1": "3",
+      "pic2": "2",
+      "pic3": "1",
+      "price": 55555,
+      "category": "Accessories",
+      "id": 5
+    },
+    {
+      "title": "MIKE",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
+      "pic2": "j",
+      "pic3": "j",
+      "price": 41,
+      "category": "jjjj",
+      "id": 6
+    },
+    {
+      "title": "PUMA",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
+      "pic2": "j",
+      "pic3": "j",
+      "price": 41,
+      "category": "jjjj",
+      "id": 7
+    },
+    {
+      "title": "PUMA",
+      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/53709701280x280.jpg?v4.28",
+      "pic2": "j",
+      "pic3": "j",
+      "price": 41,
+      "category": "jjjj",
+      "id": 8
+    },
+    {
+      "title": "jtest",
+      "pic1": "1",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 852,
+      "category": "Accessories",
+      "id": 9
+    },
+    {
+      "title": "jtest",
+      "pic1": "1",
+      "pic2": "2",
+      "pic3": "3",
+      "price": 852,
+      "category": "",
+      "caregory": "Accessories",
+      "id": 10
+>>>>>>> f54efc6e5f8bdc9b9608fd18af7c6a3e2fd5fff2
     }
   ]
 }
