@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useSearchParams } from "react-router-dom";
 
-const Sidebar = () => {
+const SideBar = () => {
   const { fetchByParams } = useProducts();
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -83,4 +83,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
