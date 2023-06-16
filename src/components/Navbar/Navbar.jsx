@@ -19,7 +19,7 @@ import InputBase from "@mui/material/InputBase";
 
 import { Badge, TextField } from "@mui/material";
 import { styled } from "@mui/system";
-import BadgedCarticon from "./BadgedCarticon";
+import BadgedCartIcon from "./BadgedCartIcon";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -218,6 +218,7 @@ function Navbar() {
                 },
               }}
             />
+
             {/* <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
@@ -261,7 +262,7 @@ function Navbar() {
             </Menu>
           </Box>
           <Link to="/cart">
-            <BadgedCarticon count={count} />
+            <BadgedCartIcon count={count} />
           </Link>
         </Toolbar>
       </Container>

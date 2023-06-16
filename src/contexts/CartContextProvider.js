@@ -105,9 +105,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const values = {
+    cart: state.cart,
     getCart,
     addProductToCart,
-    cart: state.cart,
+
     checkProductInCart,
     changeProductCount,
     deleteCartProduct,

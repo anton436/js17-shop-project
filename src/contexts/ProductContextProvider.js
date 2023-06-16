@@ -1,8 +1,8 @@
-import axios from "axios";
-import React, { createContext, useContext, useReducer, useState } from "react";
+import axios from 'axios';
+import React, { createContext, useContext, useReducer, useState } from 'react';
 
-import { useNavigate } from "react-router-dom";
-import { ACTIONS, API } from "../helpers/consts";
+import { useNavigate } from 'react-router-dom';
+import { ACTIONS, API } from '../helpers/consts';
 
 export const productContext = createContext();
 
@@ -64,11 +64,11 @@ const ProductContextProvider = ({ children }) => {
 
   const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(window.location.search);
-    if (value === "All") {
+    if (value === 'All') {
       search.delete(query);
-    } else if (query === "_sort") {
-      search.set(query, "price");
-      search.set("_order", value);
+    } else if (query === '_sort') {
+      search.set(query, 'price');
+      search.set('_order', value);
     } else {
       search.set(query, value);
     }
