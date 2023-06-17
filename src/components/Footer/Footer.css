@@ -230,7 +230,15 @@ ul {
   margin-left: 0.7rem;
 }
 
+.visa:hover {
+  cursor: pointer;
+}
+
 .mastercard {
   width: 100;
   margin-left: 1rem;
+}
+
+.mastercard:hover {
+  cursor: pointer;
 }

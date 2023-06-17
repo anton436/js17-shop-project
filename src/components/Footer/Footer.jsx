@@ -5,6 +5,7 @@ import facebook from "./imgs/facebook.svg";
 import instagram from "./imgs/instagram.svg";
 import mastercard from "./imgs/mastercard.jpeg";
 import visa from "./imgs/visa.jpeg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -126,7 +127,9 @@ function Footer() {
             <br />
             <br />
             <strong>
-              пр. Чуй, 127 <br />
+              <Link to="https://go.2gis.com/x0tyb">
+                пр. Чуй, 127 <br />
+              </Link>
               (ТЦ "1 000 мелочей"){" "}
             </strong>
             <br />
@@ -139,7 +142,9 @@ function Footer() {
           </p>
 
           <p className="footer__contacts_list2">
-            <strong>ул. Киевская, 148</strong>
+            <Link to="https://go.2gis.com/kg9av">
+              <strong>ул. Киевская, 148</strong>
+            </Link>
             <br />
             <strong>ТРЦ "Bishkek Park", 1 этаж </strong>
             <br />
@@ -147,7 +152,9 @@ function Footer() {
             0 (559) 312 091
             <br />
             <br />
-            <strong>пр. Ч. Айтматова, 21/2 </strong>
+            <Link to="https://go.2gis.com/rbohw">
+              <strong>пр. Ч. Айтматова, 21/2 </strong>
+            </Link>
             <br />
             <strong>
               пер. Гагарина (район БГУ)
@@ -160,9 +167,11 @@ function Footer() {
             <strong>Телефон: </strong>0 (312) 986 840
           </p>
           <p className="footer__contacts_list3">
-            <strong>
-              пр. Ч. Айтматова, 3 <br />
-            </strong>
+            <Link to="https://go.2gis.com/3euuy">
+              <strong>
+                пр. Ч. Айтматова, 3 <br />
+              </strong>
+            </Link>
             <strong>
               ТРЦ "Asia Mall", 2 этаж <br />
             </strong>

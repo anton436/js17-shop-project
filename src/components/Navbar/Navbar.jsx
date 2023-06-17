@@ -109,7 +109,6 @@ function Navbar() {
         }}
       >
         <Toolbar disableGutters sx={{ width: "100%" }}>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -132,7 +131,6 @@ function Navbar() {
               className="puma_icon"
             />
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -169,7 +167,6 @@ function Navbar() {
                   </MenuItem>
                 </Link>
               ))}
-
               {email === ADMIN ? (
                 <Link to="/admin">
                   <MenuItem onClick={handleCloseNavMenu}>
@@ -218,7 +215,6 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
-
             {email === ADMIN ? (
               <Link to="/admin">
                 <Button
@@ -262,11 +258,6 @@ function Navbar() {
               }}
               onChange={(e) => setSearch(e.target.value)}
             />
-
-            {/* <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            /> */}
           </Box>
           <Box></Box>
           <Box sx={{ flexGrow: 0 }}>
@@ -300,7 +291,7 @@ function Navbar() {
             >
               {email ? (
                 <MenuItem>
-                  <Typography textAlign="center">hello, {email}</Typography>
+                  <Typography textAlign="center">hello, {email}!</Typography>
                 </MenuItem>
               ) : null}
 

@@ -82,7 +82,7 @@ export default function Auth() {
           </Avatar>
 
           <Typography component="h1" variant="h5">
-            {hasAccount ? "Login" : "Register Form"}
+            {hasAccount ? "Login Form" : "Register Form"}
           </Typography>
           <Box
             component="form"
@@ -104,6 +104,7 @@ export default function Auth() {
               helperText={emailError}
             />
             <TextField
+              helperText={passwordError}
               margin="normal"
               required
               fullWidth
@@ -114,8 +115,8 @@ export default function Auth() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              helperText={passwordError}
             />
+
             {hasAccount ? (
               <Button
                 type="submit"
@@ -126,7 +127,7 @@ export default function Auth() {
                   handleLogin();
                 }}
               >
-                Login
+                LOGIN
               </Button>
             ) : (
               <Button
@@ -138,7 +139,7 @@ export default function Auth() {
                   handleSignUp();
                 }}
               >
-                Register
+                REGISTER
               </Button>
             )}
 
@@ -163,7 +164,7 @@ export default function Auth() {
                     href="#"
                     variant="body2"
                   >
-                    {"Already have an account? Login!"}
+                    {"Already have an account? Login! "}
                   </Link>
                 )}
               </Grid>
