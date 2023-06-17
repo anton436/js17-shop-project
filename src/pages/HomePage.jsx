@@ -1,8 +1,8 @@
-import { Box, Button, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import Carousel from './Carousel';
-import './styles/Styles.css';
-import { useProducts } from '../contexts/ProductContextProvider';
+import { Box, Button, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import Carousel from "./Carousel";
+import "./styles/Styles.css";
+import { useProducts } from "../contexts/ProductContextProvider";
 
 const HomePage = () => {
   const { getProducts, products } = useProducts();
@@ -16,11 +16,11 @@ const HomePage = () => {
 
   useEffect(() => {
     products.forEach((product) => {
-      if (product.category === 'Clothes') {
+      if (product.category === "Clothes") {
         setClothes((prevClothes) => [...prevClothes, product]);
-      } else if (product.category === 'Shoes') {
+      } else if (product.category === "Shoes") {
         setShoes((prevShoes) => [...prevShoes, product]);
-      } else if (product.category === 'Accessories') {
+      } else if (product.category === "Accessories") {
         setAccessories((prevAccessories) => [...prevAccessories, product]);
       }
     });
@@ -28,38 +28,41 @@ const HomePage = () => {
   console.log(clothes);
   return (
     <div>
-      <Box sx={{ overflowX: 'hidden' }}>
+      <Box sx={{ overflowX: "hidden" }}>
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             backgroundImage:
               'url("https://pumakyrgyzstan.kg/uploads/photos/new_collection_man_ss23-11920x9999.jpg?v=5.01")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            padding: '150px',
-            margin: '0 0 150px 0',
-          }}>
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            padding: "150px",
+            margin: "0 0 150px 0",
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
-              color: '#ffffff',
-              textAlign: 'center',
-              fontFamily: 'serif',
-              fontWeight: '500',
-            }}>
+              color: "#ffffff",
+              textAlign: "center",
+              fontFamily: "serif",
+              fontWeight: "500",
+            }}
+          >
             НОВАЯ <br /> КОЛЛЕКЦИЯ
           </Typography>
 
           <Button
             sx={{
-              width: '10%',
-              background: '#ffffff',
-              color: 'black',
-              border: '1px solid black',
-            }}>
+              width: "10%",
+              background: "#ffffff",
+              color: "black",
+              border: "1px solid black",
+            }}
+          >
             Каталог
           </Button>
         </Box>
@@ -68,35 +71,38 @@ const HomePage = () => {
 
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'start',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
             backgroundImage:
               'url("https://pumakyrgyzstan.kg/uploads/photos/new_collection_woman_ss23-11920x9999.jpg?v=5.01")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            padding: '150px 0',
-            margin: '150px 0',
-          }}>
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            padding: "150px 0",
+            margin: "150px 0",
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
-              color: '#ffffff',
-              textAlign: 'start',
-              fontFamily: 'serif',
-              fontWeight: '500',
-            }}>
+              color: "#ffffff",
+              textAlign: "start",
+              fontFamily: "serif",
+              fontWeight: "500",
+            }}
+          >
             НОВАЯ <br /> КОЛЛЕКЦИЯ
           </Typography>
 
           <Button
             sx={{
-              width: '10%',
-              background: '#ffffff',
-              color: 'black',
-              border: '1px solid black',
-            }}>
+              width: "10%",
+              background: "#ffffff",
+              color: "black",
+              border: "1px solid black",
+            }}
+          >
             Каталог
           </Button>
         </Box>
@@ -104,102 +110,112 @@ const HomePage = () => {
 
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'start',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
             backgroundImage:
               'url("https://pumakyrgyzstan.kg/uploads/photos/Football_1920x667new1920x9999.jpg?v=5.01")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            padding: '150px 0',
-            margin: '150px 0',
-          }}>
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            padding: "150px 0",
+            margin: "150px 0",
+          }}
+        >
           <Typography
             variant="h2"
             sx={{
-              color: 'black',
-              textAlign: 'start',
-              fontFamily: 'serif',
-              fontWeight: '500',
-            }}>
+              color: "black",
+              textAlign: "start",
+              fontFamily: "serif",
+              fontWeight: "500",
+            }}
+          >
             ИГРАЙ ЯРЧЕ, <br /> ЧЕМ КОГДА ЛИБО
           </Typography>
           <h2>для тех, кто любит победу!</h2>
 
           <Button
             sx={{
-              width: '10%',
-              background: '#ffffff',
-              color: 'black',
-              border: '1px solid black',
-            }}>
+              width: "10%",
+              background: "#ffffff",
+              color: "black",
+              border: "1px solid black",
+            }}
+          >
             Выбрать
           </Button>
         </Box>
         <Carousel product={accessories} />
-        <Box sx={{ display: 'flex', marginTop: '50px' }}>
+        <Box sx={{ display: "flex", marginTop: "50px" }}>
           <ul
             style={{
-              listStyleType: 'none',
-              padding: '0',
-              margin: '0',
-              display: 'flex',
-            }}>
+              listStyleType: "none",
+              padding: "0",
+              margin: "0",
+              display: "flex",
+            }}
+          >
             <li
               style={{
-                flex: '1',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+                flex: "1",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <img
                 src="https://pumakyrgyzstan.kg/uploads/photos/3922_1200x6281920x9999.jpg?v=5.01"
                 alt=""
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: "100%", height: "auto" }}
               />
               <Typography variant="h2">MOTORSPORT</Typography>
               <Button
-                sx={{ width: '20%', background: 'black', color: '#ffffff' }}>
+                sx={{ width: "20%", background: "black", color: "#ffffff" }}
+              >
                 Выбрать
               </Button>
             </li>
             <li
               style={{
-                flex: '1',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+                flex: "1",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <img
                 src="https://pumakyrgyzstan.kg/uploads/photos/Puma-Studio_kyrgyzstan-1200x6281920x9999.png?v=5.01"
                 alt=""
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: "100%", height: "auto" }}
               />
               <Typography variant="h2">PUMA STUDIO</Typography>
               <Button
-                sx={{ width: '20%', background: 'black', color: '#ffffff' }}>
+                sx={{ width: "20%", background: "black", color: "#ffffff" }}
+              >
                 Выбрать
               </Button>
             </li>
             <li
               style={{
-                flex: '1',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
+                flex: "1",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <img
                 src="https://pumakyrgyzstan.kg/uploads/photos/RS-X_1200x6281920x9999.png?v=5.01"
                 alt=""
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: "100%", height: "auto" }}
               />
               <Typography variant="h2">PUMA RS</Typography>
               <Button
-                sx={{ width: '20%', background: 'black', color: '#ffffff' }}>
+                sx={{ width: "20%", background: "black", color: "#ffffff" }}
+              >
                 Выбрать
               </Button>
             </li>
@@ -207,11 +223,12 @@ const HomePage = () => {
         </Box>
         <Box
           sx={{
-            backgroundColor: '#eceeef',
-            padding: ' 30px',
-            marginTop: '50px',
-          }}>
-          <Box sx={{ borderTop: ' 1px solid white', padding: '15px 0' }}>
+            backgroundColor: "#eceeef",
+            padding: " 30px",
+            marginTop: "50px",
+          }}
+        >
+          <Box sx={{ borderTop: " 1px solid white", padding: "15px 0" }}>
             <h3>О компании PUMA</h3>
             <p>
               <strong>PUMA</strong> - один из крупнейших мировых спортивных
@@ -246,7 +263,7 @@ const HomePage = () => {
               превращать сложности в возможности. Побеждать.
             </p>
             <p>
-              Открывай новую страницу своей активной жизни вместе с{' '}
+              Открывай новую страницу своей активной жизни вместе с{" "}
               <strong>интернет-магазином PUMA Kyrgyzstan</strong>.
             </p>
           </Box>

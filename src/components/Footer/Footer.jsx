@@ -1,10 +1,11 @@
-import './Footer.css';
-import React from 'react';
-import logo from './imgs/logo.jpeg';
-import facebook from './imgs/facebook.svg';
-import instagram from './imgs/instagram.svg';
-import mastercard from './imgs/mastercard.jpeg';
-import visa from './imgs/visa.jpeg';
+import "./Footer.css";
+import React from "react";
+import logo from "./imgs/logo.jpeg";
+import facebook from "./imgs/facebook.svg";
+import instagram from "./imgs/instagram.svg";
+import mastercard from "./imgs/mastercard.jpeg";
+import visa from "./imgs/visa.jpeg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -15,13 +16,13 @@ function Footer() {
         className="footer__logo"
       />
 
-      <div className="footer__toprigth">
-        <p className="footer__toprigth_text">
+      <div className="footer__topright">
+        <p className="footer__topright_text">
           Самые актуальные предложения и акции!
         </p>
         <br />
         <input
-          className="footer__toprigth_input"
+          className="footer__topright_input"
           type="text"
           placeholder="  Email*"
         />
@@ -42,7 +43,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/vacancies">
+                  href="https://pumakyrgyzstan.kg/ru/vacancies"
+                >
                   Вакансии
                 </a>
               </li>
@@ -50,7 +52,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/podlinnost-tovara">
+                  href="https://pumakyrgyzstan.kg/ru/page/podlinnost-tovara"
+                >
                   Подлинность товара
                 </a>
               </li>
@@ -58,7 +61,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/terms-and-conditions">
+                  href="https://pumakyrgyzstan.kg/ru/page/terms-and-conditions"
+                >
                   Условия использования
                 </a>
               </li>
@@ -66,7 +70,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/rules">
+                  href="https://pumakyrgyzstan.kg/ru/page/rules"
+                >
                   Система скидок
                 </a>
               </li>
@@ -74,7 +79,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/delivery">
+                  href="https://pumakyrgyzstan.kg/ru/page/delivery"
+                >
                   Оплата и доставка
                 </a>
               </li>
@@ -82,7 +88,8 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/warranty">
+                  href="https://pumakyrgyzstan.kg/ru/page/warranty"
+                >
                   Гарантийные условия
                 </a>
               </li>
@@ -90,14 +97,16 @@ function Footer() {
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/return">
+                  href="https://pumakyrgyzstan.kg/ru/page/return"
+                >
                   Политика возврата и обмена
                 </a>
               </li>
               <li className="footer__menu-items_item">
                 <a
                   className="footer__menu-items_item-link"
-                  href="https://pumakyrgyzstan.kg/ru/page/checkout">
+                  href="https://pumakyrgyzstan.kg/ru/page/checkout"
+                >
                   Политика Конфиденциальности и безопасности
                 </a>
               </li>
@@ -118,8 +127,10 @@ function Footer() {
             <br />
             <br />
             <strong>
-              пр. Чуй, 127 <br />
-              (ТЦ "1 000 мелочей"){' '}
+              <Link to="https://go.2gis.com/x0tyb">
+                пр. Чуй, 127 <br />
+              </Link>
+              (ТЦ "1 000 мелочей"){" "}
             </strong>
             <br />
             <strong>
@@ -131,7 +142,9 @@ function Footer() {
           </p>
 
           <p className="footer__contacts_list2">
-            <strong>ул. Киевская, 148</strong>
+            <Link to="https://go.2gis.com/kg9av">
+              <strong>ул. Киевская, 148</strong>
+            </Link>
             <br />
             <strong>ТРЦ "Bishkek Park", 1 этаж </strong>
             <br />
@@ -139,7 +152,9 @@ function Footer() {
             0 (559) 312 091
             <br />
             <br />
-            <strong>пр. Ч. Айтматова, 21/2 </strong>
+            <Link to="https://go.2gis.com/rbohw">
+              <strong>пр. Ч. Айтматова, 21/2 </strong>
+            </Link>
             <br />
             <strong>
               пер. Гагарина (район БГУ)
@@ -152,9 +167,11 @@ function Footer() {
             <strong>Телефон: </strong>0 (312) 986 840
           </p>
           <p className="footer__contacts_list3">
-            <strong>
-              пр. Ч. Айтматова, 3 <br />
-            </strong>
+            <Link to="https://go.2gis.com/3euuy">
+              <strong>
+                пр. Ч. Айтматова, 3 <br />
+              </strong>
+            </Link>
             <strong>
               ТРЦ "Asia Mall", 2 этаж <br />
             </strong>
