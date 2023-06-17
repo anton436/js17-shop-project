@@ -13,6 +13,7 @@ export const useProducts = () => {
 const INIT_STATE = {
   products: [],
   productDetails: null,
+  recentlyWatched: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -22,6 +23,9 @@ const reducer = (state = INIT_STATE, action) => {
 
     case ACTIONS.GET_PRODUCT_DETAILS:
       return { ...state, productDetails: action.payload };
+
+    case ACTIONS.ADD_TO_RECENTLY_WATCHED:
+      return { ...state, recentlyWatched: action.payload };
 
     default:
       return state;
@@ -54,6 +58,18 @@ const ProductContextProvider = ({ children }) => {
   const getProductDetails = async (id) => {
     const { data } = await axios(`${API}/${id}`);
     dispatch({ type: ACTIONS.GET_PRODUCT_DETAILS, payload: data });
+
+    const updatedRecentlyWatched = [...state.recentlyWatched];
+    if (!updatedRecentlyWatched.includes(data)) {
+      updatedRecentlyWatched.unshift(data);
+      if (updatedRecentlyWatched.length > 2) {
+        updatedRecentlyWatched.pop();
+      }
+    }
+    dispatch({
+      type: ACTIONS.ADD_TO_RECENTLY_WATCHED,
+      payload: updatedRecentlyWatched,
+    });
   };
 
   //! patch request (UPDATE PRODUCT)
@@ -86,6 +102,7 @@ const ProductContextProvider = ({ children }) => {
     productDetails: state.productDetails,
     saveEditedProduct,
     fetchByParams,
+    recentlyWatched: state.recentlyWatched,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

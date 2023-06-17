@@ -4,6 +4,7 @@ export const ACTIONS = {
   GET_PRODUCTS: "GET_PRODUCTS",
   GET_PRODUCT_DETAILS: "GET_PRODUCT_DETAILS",
   GET_CART: "GET_CART",
+  ADD_TO_RECENTLY_WATCHED: "ADD_TO_RECENTLY_WATCHED",
 };
 
-export const ADMIN = "yeees.nooo02@gmail.com";
+export const ADMIN = "supersamat2004@gmail.com";
