@@ -7,7 +7,7 @@ const ProductPage = () => {
   return (
     <div>
       <Grid container>
-        <SideBar />
+        <Sidebar />
         <ProductList />
       </Grid>
     </div>

@@ -54,8 +54,6 @@ export default function Auth() {
     handleLogin,
   } = useAuth();
 
-  const navigate = useNavigate();
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

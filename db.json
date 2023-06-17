@@ -1,31 +1,6 @@
 {
   "products": [
     {
-<<<<<<< HEAD
-      "title": "Samat",
-      "pic1": "https://images.pexels.com/photos/4046313/pexels-photo-4046313.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "pic2": "https://images.pexels.com/photos/3119215/pexels-photo-3119215.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "pic3": "https://images.pexels.com/photos/4546003/pexels-photo-4546003.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "price": 9999,
-      "category": "Clothes",
-      "id": 4
-    },
-    {
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-      "category": "Shoes",
-      "id": 7
-    },
-    {
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-=======
       "title": "Ветровка",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52307301875x875.jpg?v4.28",
       "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52307301_01875x875.jpg?v4.28",
@@ -103,62 +78,19 @@
       "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/38559705_03875x875.jpg?v4.28",
       "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/38559705_04875x875.jpg?v4.28",
       "price": 4500,
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
       "category": "Shoes",
       "id": 9
     },
     {
-<<<<<<< HEAD
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-=======
       "title": "Черные говнодавы",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/38871202875x875.jpg?v4.28",
       "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/38871202_03875x875.jpg?v4.28",
       "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/38871202_04875x875.jpg?v4.28",
       "price": 4500,
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
       "category": "Shoes",
       "id": 10
     },
     {
-<<<<<<< HEAD
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-      "category": "Clothes",
-      "id": 11
-    },
-    {
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-      "category": "Clothes",
-      "id": 12
-    },
-    {
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-      "category": "Clothes",
-      "id": 13
-    },
-    {
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-=======
       "title": "Ботинки с бантиком",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/36972605875x875.jpg?v4.28",
       "pic2": "--",
@@ -191,41 +123,24 @@
       "pic2": "",
       "pic3": "",
       "price": 1000,
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
       "category": "Accessories",
       "id": 14
     },
     {
-<<<<<<< HEAD
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-=======
       "title": "Крутая кепка",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/02255415875x875.jpg?v4.28",
       "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/02255415_01875x875.jpg?v4.28",
       "pic3": "--",
       "price": 500,
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
       "category": "Accessories",
       "id": 15
     },
     {
-<<<<<<< HEAD
-      "title": "aaaaa",
-      "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic2": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "pic3": "https://pumakyrgyzstan.kg/images/products/jpg/52252801875x875.jpg?v4.28",
-      "price": 33535,
-=======
       "title": "Кепка для квадратной головы",
       "pic1": "https://pumakyrgyzstan.kg/images/products/jpg/02367201875x875.jpg?v4.28",
       "pic2": "https://pumakyrgyzstan.kg/images/products/02367201_01.jpg?v4.28",
       "pic3": "--",
       "price": 500,
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
       "category": "Accessories",
       "id": 16
     }

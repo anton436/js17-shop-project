@@ -14,12 +14,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link, useSearchParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
-<<<<<<< HEAD
-
-import { Badge, TextField } from "@mui/material";
-=======
 import { TextField } from "@mui/material";
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
 import { styled } from "@mui/system";
 import BadgedCartIcon from "./BadgedCartIcon";
 import { useCart } from "../../contexts/CartContextProvider";
@@ -28,20 +23,10 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
 import { useState } from "react";
 import { useEffect } from "react";
-<<<<<<< HEAD
-import { getCountProductsInCart } from "../../helpers/functions";
-import { useAuth } from "../../contexts/AuthContextProvider";
-import { ADMIN } from "../../helpers/consts";
-
-const pages = [
-  { name: "Одежда", link: "/", id: 1 },
-  { name: "Правила PUMA", link: "/products", id: 2 },
-=======
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
   { name: "Каталог", link: "/products", id: 2 },
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
   // { name: "ADMIN", link: "/admin", id: 3 },
 ];
 const settings = ["Profile", "Account", "Dashboard"];
@@ -104,8 +89,6 @@ function Navbar() {
     handleLogout,
     user: { email },
   } = useAuth();
-<<<<<<< HEAD
-=======
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
@@ -114,7 +97,6 @@ function Navbar() {
     setSearchParams({ q: search });
   }, [search]);
 
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
       <Container
@@ -305,11 +287,7 @@ function Navbar() {
             >
               {email ? (
                 <MenuItem>
-<<<<<<< HEAD
-                  <Typography textAlign="center">hello , {email}</Typography>
-=======
                   <Typography textAlign="center">hello, {email}!</Typography>
->>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
                 </MenuItem>
               ) : null}
 
