@@ -2,6 +2,7 @@ import React from "react";
 import { useCart } from "../../contexts/CartContextProvider";
 import CartLeftSide from "./CartLeftSide";
 
+<<<<<<< HEAD
 const Cart = () => {
   const { cart } = useCart();
   const { products } = cart;
@@ -11,6 +12,81 @@ const Cart = () => {
       <h1>Корзина({products.length})</h1>
       <CartLeftSide />
     </div>
+=======
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+];
+
+export default function Cart() {
+  const { cart, getCart, changeProductCount, deleteCartProduct } = useCart();
+  React.useEffect(() => {
+    getCart();
+  }, []);
+
+  const cartCleaner = () => {
+    localStorage.removeItem("cart");
+    getCart();
+  };
+
+  return (
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Picture</TableCell>
+            <TableCell align="right">Title</TableCell>
+            <TableCell align="right">Category</TableCell>
+            <TableCell align="right">Price</TableCell>
+            <TableCell align="right">Count</TableCell>
+            <TableCell align="right">SubPrice</TableCell>
+            <TableCell align="right">-</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {cart?.products.map((row) => (
+            <TableRow
+              key={row.item.id}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                <img src={row.item.pic1} alt="" width={"100px"} />
+              </TableCell>
+              <TableCell align="right">{row.item.title}</TableCell>
+              <TableCell align="right">{row.item.category}</TableCell>
+              <TableCell align="right">{row.item.price}</TableCell>
+              {/* <TableCell align="right">{row.item.price}</TableCell> */}
+              <TableCell align="right">
+                <input
+                  min={1}
+                  max={20}
+                  type="number"
+                  value={row.count}
+                  onChange={(e) =>
+                    changeProductCount(e.target.value, row.item.id)
+                  }
+                />
+              </TableCell>
+              <TableCell align="right">{row.subPrice}</TableCell>
+              <TableCell align="right">
+                <button onClick={() => deleteCartProduct(row.item.id)}>
+                  delete
+                </button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
+    </TableContainer>
+>>>>>>> 9eb0770e4f68b3938916348890b10470a4e52d68
   );
 };
 

@@ -15,16 +15,22 @@ import { ADMIN } from "../../helpers/consts";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
-  const { addProductToCart, checkProductInCart } = useCart();
+  const { addProductToCart, checkProductCard } = useCart();
+  const navigate = useNavigate();
   const {
     user: { email },
   } = useAuth();
-  const navigate = useNavigate();
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
+        sx={{
+          height: 0,
+          paddingTop: "100%", // Set the paddingTop to 100% for full image display
+          cursor: "pointer",
+          maxWidth: "100%",
+        }}
+        image={item.pic1}
         title="green iguana"
         onClick={() => navigate(`/details/${item.id}`)}
       />
@@ -36,7 +42,19 @@ export default function ProductCard({ item }) {
           {item.price} $
         </Typography>
       </CardContent>
-      <CardActions>
+      <div
+        style={{
+          borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+          margin: "0 16px",
+        }}
+      />
+      <CardActions
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         {email === ADMIN ? (
           <>
             <Button size="small" onClick={() => deleteProduct(item.id)}>
@@ -47,10 +65,13 @@ export default function ProductCard({ item }) {
             </Button>
           </>
         ) : (
-          <IconButton onClick={() => addProductToCart(item)}>
-            <AddShoppingCartIcon
-              color={checkProductInCart(item.id) ? "primary" : ""}
-            />
+          <IconButton
+            sx={{
+              color: checkProductCard(item.id) ? "primary" : "inherit",
+            }}
+            onClick={() => addProductToCart(item)}
+          >
+            <AddShoppingCartIcon />
           </IconButton>
         )}
       </CardActions>

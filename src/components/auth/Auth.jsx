@@ -54,6 +54,8 @@ export default function Auth() {
     handleLogin,
   } = useAuth();
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -102,6 +104,7 @@ export default function Auth() {
               helperText={emailError}
             />
             <TextField
+              helperText={passwordError}
               margin="normal"
               required
               fullWidth
@@ -112,7 +115,6 @@ export default function Auth() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              helperText={passwordError}
             />
 
             {hasAccount ? (
@@ -125,7 +127,7 @@ export default function Auth() {
                   handleLogin();
                 }}
               >
-                Login
+                LOGIN
               </Button>
             ) : (
               <Button
@@ -137,7 +139,7 @@ export default function Auth() {
                   handleSignUp();
                 }}
               >
-                Register
+                REGISTER
               </Button>
             )}
 
@@ -154,7 +156,7 @@ export default function Auth() {
                     href="#"
                     variant="body2"
                   >
-                    {"Don't have an account? Register Now"}
+                    {"Don't have an account? Register Now!"}
                   </Link>
                 ) : (
                   <Link
@@ -162,7 +164,7 @@ export default function Auth() {
                     href="#"
                     variant="body2"
                   >
-                    {"Already have an account? Login!"}
+                    {"Already have an account? Login! "}
                   </Link>
                 )}
               </Grid>

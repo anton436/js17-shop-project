@@ -17,7 +17,7 @@ export default function BadgedCartIcon({ count }) {
   return (
     <IconButton aria-label="cart">
       <StyledBadge badgeContent={count} color="secondary">
-        <ShoppingCartIcon sx={{ color: "white" }} />
+        <ShoppingCartIcon sx={{ color: "gray" }} />
       </StyledBadge>
     </IconButton>
   );

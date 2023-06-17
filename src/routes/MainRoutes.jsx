@@ -63,7 +63,6 @@ const MainRoutes = () => {
   ];
 
   const { user } = useAuth();
-
   return (
     <Routes>
       {PUBLIC_ROUTES.map((item) => (
@@ -75,7 +74,9 @@ const MainRoutes = () => {
             <Route
               key={item.id}
               path={item.link}
-              elemen={user.email === ADMIN ? item.element : <Navigate to="*" />}
+              element={
+                user.email === ADMIN ? item.element : <Navigate to="*" />
+              }
             />
           ))
         : null}

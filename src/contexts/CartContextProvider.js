@@ -69,7 +69,7 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: ACTIONS.GET_CART, payload: cart });
   };
 
-  const checkProductInCart = (id) => {
+  const checkProductCart = (id) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
 
     if (cart) {
@@ -88,7 +88,6 @@ const CartContextProvider = ({ children }) => {
       return product;
     });
     cart.totalPrice = calcTotalPrice(cart.products);
-
     localStorage.setItem("cart", JSON.stringify(cart));
     dispatch({
       type: ACTIONS.GET_CART,
@@ -105,11 +104,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const values = {
-    cart: state.cart,
     getCart,
     addProductToCart,
-
-    checkProductInCart,
+    cart: state.cart,
+    checkProductCart,
     changeProductCount,
     deleteCartProduct,
   };
