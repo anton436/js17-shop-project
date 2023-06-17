@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Typography,
   Card,
@@ -11,27 +11,20 @@ import {
 } from "@mui/material";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductSize from "./ProductSize";
-import ProductCount from "./ProductCount";
+import { useCart } from "../../contexts/CartContextProvider";
 
 const ProductDetail = () => {
-  const { getProductDetails, productDetails } = useProducts();
+  const { getProductDetails, productDetails, recentlyWatched } = useProducts();
   const { id } = useParams();
-  const [quantity, setQuantity] = useState(1);
+
+  const { addProductToCart, checkProductCart } = useCart();
 
   useEffect(() => {
     getProductDetails(id);
   }, []);
 
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
   const [mainImages, setMainImages] = useState({});
+  const navigate = useNavigate();
 
   const handleImageClick = (productId, image) => {
     setMainImages((prevMainImages) => ({
@@ -39,7 +32,7 @@ const ProductDetail = () => {
       [productId]: image,
     }));
   };
-
+  const MAX_RECENTLY_WATCHED = 2;
   return (
     <Box>
       <Typography
@@ -140,17 +133,6 @@ const ProductDetail = () => {
               <Grid item xs={6} sm={4} md={3}>
                 <ProductSize />
               </Grid>
-              <Grid item xs={6} sm={8} md={9}></Grid>
-              <Grid item xs={6} sm={4} md={3}>
-                <Typography variant="body2">КОЛ-ВО</Typography>
-              </Grid>
-              <Grid item xs={6} sm={8} md={9}>
-                <ProductCount
-                  quantity={quantity}
-                  handleIncrement={handleIncrement}
-                  handleDecrement={handleDecrement}
-                />
-              </Grid>
             </Grid>
           </CardContent>
           <Box>
@@ -158,80 +140,59 @@ const ProductDetail = () => {
               variant="contained"
               color="secondary"
               sx={{
-                backgroundColor: "#D2B48C",
+                backgroundColor: checkProductCart(productDetails?.id)
+                  ? "#632d2d"
+                  : "#D2B48C",
                 color: "#FFFFFF",
                 borderRadius: 0,
                 width: "30px",
                 marginLeft: "65px",
                 width: "60%",
               }}
+              onClick={() => addProductToCart(productDetails)}
             >
-              Добавить в корзину
+              {checkProductCart(productDetails?.id)
+                ? "Удалить из корзины"
+                : "Добавить в корзину"}
             </Button>
           </Box>
         </Box>
         <Box>
           <Typography>recently-watched</Typography>
-          <Card
-            sx={{
-              maxWidth: 180,
-              border: "1px solid #ccc",
-              marginTop: 5,
-              textAlign: "center",
-            }}
-          >
-            <CardMedia
-              sx={{ width: 179, height: 140 }}
-              image="https://pumakyrgyzstan.kg/images/products/jpg/36962101185x185.jpg?v2.61"
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography
-                sx={{ fontSize: "14px" }}
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                Балетки PUMA Adelina SS22
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ fontSize: "17px", fontWeight: "bold" }}
-              >
-                6490 KGS
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card
-            sx={{
-              maxWidth: 180,
-              border: "1px solid #ccc",
-              marginTop: 2,
-              textAlign: "center",
-            }}
-          >
-            <CardMedia
-              sx={{ width: 179, height: 140 }}
-              image="https://pumakyrgyzstan.kg/images/products/jpg/84894201320x320.jpg?v4.28"
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography
-                sx={{ fontSize: "14px" }}
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                Балетки PUMA Adelina SS22
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ fontSize: "17px", fontWeight: "bold" }}
-              >
-                6490 KGS
-              </Typography>
-            </CardContent>
-          </Card>
+          {recentlyWatched.map((product) => (
+            <Card
+              sx={{
+                maxWidth: 180,
+                border: "1px solid #ccc",
+                marginTop: 5,
+                textAlign: "center",
+              }}
+              key={product.id}
+            >
+              <CardMedia
+                sx={{ width: 179, height: 140 }}
+                image={product.pic1}
+                title="green iguana"
+                onClick={() => navigate(`/details/${product.id}`)}
+              />
+              <CardContent>
+                <Typography
+                  sx={{ fontSize: "14px" }}
+                  gutterBottom
+                  variant="h5"
+                  component="div"
+                >
+                  {product.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{ fontSize: "17px", fontWeight: "bold" }}
+                >
+                  {product.price}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
         </Box>
       </Box>
       <Box

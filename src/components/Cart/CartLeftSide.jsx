@@ -24,7 +24,7 @@ const CartLeftSide = () => {
         display: "flex",
         flexWrap: "wrap",
         margin: "-2% -15px 0",
-        width: "60%",
+        width: "87%",
         fontFamily:
           "Roboto, PT Sans Narrow,geogrotesque,-apple-system,system-ui,BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,Arial,sans-serif",
       }}
