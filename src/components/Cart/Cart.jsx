@@ -54,26 +54,27 @@ export default function Cart() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img width={100} src={row.item.pic1} alt="" />
+                <img src={row.item.pic1} alt="" width={"100px"} />
               </TableCell>
               <TableCell align="right">{row.item.title}</TableCell>
               <TableCell align="right">{row.item.category}</TableCell>
               <TableCell align="right">{row.item.price}</TableCell>
+              {/* <TableCell align="right">{row.item.price}</TableCell> */}
               <TableCell align="right">
                 <input
-                  onChange={(e) =>
-                    changeProductCount(e.target.value, row.item.id)
-                  }
                   min={1}
                   max={20}
                   type="number"
                   value={row.count}
+                  onChange={(e) =>
+                    changeProductCount(e.target.value, row.item.id)
+                  }
                 />
               </TableCell>
               <TableCell align="right">{row.subPrice}</TableCell>
               <TableCell align="right">
                 <button onClick={() => deleteCartProduct(row.item.id)}>
-                  DELETE
+                  delete
                 </button>
               </TableCell>
             </TableRow>

@@ -71,7 +71,7 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: ACTIONS.GET_CART, payload: cart });
   };
 
-  const checkProductInCart = (id) => {
+  const checkProductCart = (id) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
 
     if (cart) {
@@ -82,7 +82,6 @@ const CartContextProvider = ({ children }) => {
 
   const changeProductCount = (count, id) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
-
     cart.products = cart.products.map((product) => {
       if (product.item.id === id) {
         product.count = count;
@@ -109,11 +108,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const values = {
-    cart: state.cart,
     getCart,
     addProductToCart,
-
-    checkProductInCart,
+    cart: state.cart,
+    checkProductCart,
     changeProductCount,
     deleteCartProduct,
   };

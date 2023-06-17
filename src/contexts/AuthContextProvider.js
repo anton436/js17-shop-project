@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import fire from "../fire";
-
+import { useNavigate } from "react-router-dom";
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
 
@@ -30,7 +29,9 @@ const AuthContextProvider = ({ children }) => {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => navigate("/"))
+      .then(() => {
+        navigate("/");
+      })
       .catch((err) => {
         switch (err.code) {
           case "auth/email-already-in-use":
@@ -53,10 +54,12 @@ const AuthContextProvider = ({ children }) => {
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => navigate("/"))
+      .then(() => {
+        navigate("/");
+      })
       .catch((err) => {
         switch (err.code) {
-          case "auth/user-disabled":
+          case "auth/user-disapled":
           case "auth/invalid-email":
           case "auth/user-not-found":
             setEmailError(err.message);
@@ -65,7 +68,6 @@ const AuthContextProvider = ({ children }) => {
           case "auth/wrong-password":
             setPasswordError(err.message);
             break;
-
           default:
             break;
         }
