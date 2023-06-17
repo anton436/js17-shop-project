@@ -31,6 +31,14 @@ const ProductDetail = () => {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
+  const [mainImages, setMainImages] = useState({});
+
+  const handleImageClick = (productId, image) => {
+    setMainImages((prevMainImages) => ({
+      ...prevMainImages,
+      [productId]: image,
+    }));
+  };
 
   return (
     <Box>
@@ -58,7 +66,7 @@ const ProductDetail = () => {
               height: 467,
               width: 452,
             }}
-            image={productDetails?.pic1}
+            image={mainImages[productDetails?.id] || productDetails?.pic1}
             title="green iguana"
           />
           <Box
@@ -76,6 +84,9 @@ const ProductDetail = () => {
               }}
               image={productDetails?.pic1}
               title="green iguana"
+              onClick={() =>
+                handleImageClick(productDetails?.id, productDetails?.pic1)
+              }
             />
             <CardMedia
               sx={{
@@ -84,6 +95,9 @@ const ProductDetail = () => {
               }}
               image={productDetails?.pic2}
               title="green iguana"
+              onClick={() =>
+                handleImageClick(productDetails?.id, productDetails?.pic2)
+              }
             />
             <CardMedia
               sx={{
@@ -92,6 +106,9 @@ const ProductDetail = () => {
               }}
               image={productDetails?.pic3}
               title="green iguana"
+              onClick={() =>
+                handleImageClick(productDetails?.id, productDetails?.pic3)
+              }
             />
           </Box>
         </Box>
