@@ -15,7 +15,7 @@ const ProductList = () => {
 
   // pagination
   const [page, setPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 9; // 3 cards per row and 3 rows
   const count = Math.ceil(products.length / itemsPerPage);
 
   const handleChange = (e, p) => {
@@ -34,13 +34,17 @@ const ProductList = () => {
     <Grid item md={9}>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "20px",
         }}
       >
         {currentData().map((item) => (
-          <ProductCard key={item.id} item={item} sx />
+          <ProductCard
+            key={item.id}
+            item={item}
+            sx={{ marginBottom: "20px" }}
+          />
         ))}
       </Box>
       <Pagination count={count} page={page} onChange={handleChange} />

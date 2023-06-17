@@ -20,10 +20,16 @@ export default function ProductCard({ item }) {
   const {
     user: { email },
   } = useAuth();
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{
+          height: 0,
+          paddingTop: "100%", // Set the paddingTop to 100% for full image display
+          cursor: "pointer",
+          maxWidth: "100%",
+        }}
         image={item.pic1}
         title="green iguana"
         onClick={() => navigate(`/details/${item.id}`)}
@@ -36,22 +42,36 @@ export default function ProductCard({ item }) {
           {item.price} $
         </Typography>
       </CardContent>
-      <CardActions>
+      <div
+        style={{
+          borderTop: "1px solid rgba(0, 0, 0, 0.1)",
+          margin: "0 16px",
+        }}
+      />
+      <CardActions
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         {email === ADMIN ? (
           <>
             <Button size="small" onClick={() => deleteProduct(item.id)}>
               Delete
             </Button>
-
             <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
               Edit
             </Button>
           </>
         ) : (
-          <IconButton onClick={() => addProductToCart(item)}>
-            <AddShoppingCartIcon
-              color={checkProductCard(item.id) ? "primary" : ""}
-            />
+          <IconButton
+            sx={{
+              color: checkProductCard(item.id) ? "primary" : "inherit",
+            }}
+            onClick={() => addProductToCart(item)}
+          >
+            <AddShoppingCartIcon />
           </IconButton>
         )}
       </CardActions>

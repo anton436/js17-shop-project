@@ -60,26 +60,26 @@ export default function Cart() {
               <TableCell align="right">{row.item.price}</TableCell>
               <TableCell align="right">
                 <input
-                  type="number"
-                  value={row.count}
                   onChange={(e) =>
                     changeProductCount(e.target.value, row.item.id)
                   }
                   min={1}
                   max={20}
+                  type="number"
+                  value={row.count}
                 />
               </TableCell>
               <TableCell align="right">{row.subPrice}</TableCell>
               <TableCell align="right">
                 <button onClick={() => deleteCartProduct(row.item.id)}>
-                  Delete
+                  DELETE
                 </button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice}</Button>
+      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
     </TableContainer>
   );
 }

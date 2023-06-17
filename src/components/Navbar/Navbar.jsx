@@ -19,17 +19,18 @@ import InputBase from "@mui/material/InputBase";
 
 import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
-import BadgedCarticon from "./BadgedCarticon";
+import BadgedCartIcon from "./BadgedCartIcon";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
+import { useSearchParams } from "react-router-dom";
 
 const pages = [
-  { name: "Одежда", link: "/", id: 1 },
-  { name: "Правила PUMA", link: "/products", id: 2 },
+  { name: "Главная", link: "/", id: 1 },
+  { name: "Каталог", link: "/products", id: 2 },
   // { name: "ADMIN", link: "/admin", id: 3 },
 ];
 const settings = ["Profile", "Account", "Dashboard"];
@@ -81,17 +82,22 @@ function Navbar() {
   };
 
   const [count, setCount] = useState(0);
-
   const { addProductToCart } = useCart();
-
   useEffect(() => {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
 
   const {
-    handleLogOut,
+    handleLogout,
     user: { email },
   } = useAuth();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
@@ -245,14 +251,13 @@ function Navbar() {
             <SearchIcon sx={{ marginLeft: "10px" }} />
 
             <TextField
-              placeholder="поиск..."
-              sx={{
-                "& input": {
-                  color: "white",
-                  borderColor: "gray",
-                },
-              }}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              fullWidth
+              label="search..."
+              variant="standard"
             />
+
             {/* <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
@@ -290,11 +295,9 @@ function Navbar() {
             >
               {email ? (
                 <MenuItem>
-                  <Typography textAlign="center">hello, {email}</Typography>
+                  <Typography textAlign="center">hello, {email}!</Typography>
                 </MenuItem>
-              ) : (
-                ""
-              )}
+              ) : null}
 
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
@@ -304,7 +307,7 @@ function Navbar() {
               <MenuItem
                 onClick={() => {
                   handleCloseUserMenu();
-                  handleLogOut();
+                  handleLogout();
                 }}
               >
                 <Typography textAlign="center">Logout</Typography>
@@ -312,7 +315,7 @@ function Navbar() {
             </Menu>
           </Box>
           <Link to="/cart">
-            <BadgedCarticon count={count} />
+            <BadgedCartIcon count={count} />
           </Link>
         </Toolbar>
       </Container>

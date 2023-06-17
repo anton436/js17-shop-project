@@ -2,8 +2,6 @@ import { Box, Button, TableBody, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import CategorySelect from "./CategorySelect";
-// import { hover } from "@testing-library/user-event/dist/hover";
-// import { WidthNormal } from "@mui/icons-material";
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -31,6 +29,18 @@ const AddProduct = () => {
       };
       setProduct(obj);
     }
+  };
+
+  const handleAddProduct = () => {
+    addProduct(product);
+    setProduct({
+      title: "",
+      pic1: "",
+      pic2: "",
+      pic3: "",
+      price: 0,
+      category: "",
+    });
   };
 
   return (
@@ -70,6 +80,7 @@ const AddProduct = () => {
           name="title"
           label="title"
           variant="outlined"
+          value={product.title} // Установка значения из состояния
         />
         <TextField
           sx={{
@@ -84,6 +95,7 @@ const AddProduct = () => {
           name="pic1"
           label="pic1"
           variant="outlined"
+          value={product.pic1} // Установка значения из состояния
         />
         <TextField
           sx={{
@@ -98,6 +110,7 @@ const AddProduct = () => {
           name="pic2"
           label="pic2"
           variant="outlined"
+          value={product.pic2} // Установка значения из состояния
         />
         <TextField
           sx={{
@@ -112,6 +125,7 @@ const AddProduct = () => {
           name="pic3"
           label="pic3"
           variant="outlined"
+          value={product.pic3} // Установка значения из состояния
         />
         <TextField
           sx={{
@@ -126,6 +140,7 @@ const AddProduct = () => {
           name="price"
           label="price"
           variant="outlined"
+          value={product.price} // Установка значения из состояния
         />
         <CategorySelect product={product} setProduct={setProduct} />
 
@@ -143,7 +158,7 @@ const AddProduct = () => {
                 color: "white",
               },
             }}
-            onClick={() => addProduct(product)}
+            onClick={handleAddProduct}
             fullWidth
             variant="outlined"
             size="large"

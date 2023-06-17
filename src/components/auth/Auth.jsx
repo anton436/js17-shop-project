@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -41,15 +42,19 @@ export default function Auth() {
     email,
     password,
     user,
+
     emailError,
     passwordError,
     hasAccount,
+
     setEmail,
     setPassword,
     setHasAccount,
     handleSignUp,
-    hahdleLogin,
+    handleLogin,
   } = useAuth();
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -75,8 +80,9 @@ export default function Auth() {
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
+
           <Typography component="h1" variant="h5">
-            {hasAccount ? "Login form" : "Register form"}
+            {hasAccount ? "Login Form" : "Register Form"}
           </Typography>
           <Box
             component="form"
@@ -98,6 +104,7 @@ export default function Auth() {
               helperText={emailError}
             />
             <TextField
+              helperText={passwordError}
               margin="normal"
               required
               fullWidth
@@ -108,17 +115,19 @@ export default function Auth() {
               autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              helperText={passwordError}
             />
+
             {hasAccount ? (
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={hahdleLogin}
+                onClick={() => {
+                  handleLogin();
+                }}
               >
-                Log in
+                LOGIN
               </Button>
             ) : (
               <Button
@@ -126,9 +135,11 @@ export default function Auth() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={handleSignUp}
+                onClick={() => {
+                  handleSignUp();
+                }}
               >
-                Register
+                REGISTER
               </Button>
             )}
 
@@ -145,7 +156,7 @@ export default function Auth() {
                     href="#"
                     variant="body2"
                   >
-                    {"Don't have an account? Sign Up"}
+                    {"Don't have an account? Register Now!"}
                   </Link>
                 ) : (
                   <Link
@@ -153,7 +164,7 @@ export default function Auth() {
                     href="#"
                     variant="body2"
                   >
-                    {"Aclready have an account? Login"}
+                    {"Already have an account? Login! "}
                   </Link>
                 )}
               </Grid>

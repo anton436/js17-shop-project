@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import fire from "../fire";
 import { useNavigate } from "react-router-dom";
+import fire from "../fire";
 
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
@@ -33,19 +33,21 @@ const AuthContextProvider = ({ children }) => {
       .catch((err) => {
         switch (err.code) {
           case "auth/email-already-in-use":
-
           case "auth/invalid-email":
             setEmailError(err.message);
             break;
+
           case "auth/weak-password":
             setPasswordError(err.message);
+            break;
 
+          default:
             break;
         }
       });
   };
 
-  const hahdleLogin = () => {
+  const handleLogin = () => {
     clearErrors();
     fire
       .auth()
@@ -55,19 +57,21 @@ const AuthContextProvider = ({ children }) => {
         switch (err.code) {
           case "auth/user-disabled":
           case "auth/invalid-email":
-          case "auth/-not-found":
+          case "auth/user-not-found":
             setEmailError(err.message);
-
             break;
+
           case "auth/wrong-password":
             setPasswordError(err.message);
+            break;
 
+          default:
             break;
         }
       });
   };
 
-  const handleLogOut = () => {
+  const handleLogout = () => {
     fire.auth().signOut();
   };
 
@@ -81,24 +85,29 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   };
+
   useEffect(() => {
     authListener();
   }, []);
+
   console.log(user);
 
   const values = {
     email,
     password,
     user,
+
     emailError,
     passwordError,
     hasAccount,
+
     setEmail,
     setPassword,
     setHasAccount,
+
     handleSignUp,
-    hahdleLogin,
-    handleLogOut,
+    handleLogin,
+    handleLogout,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
