@@ -21,10 +21,13 @@ import { useCart } from "../../contexts/CartContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const pages = [
-  { name: "Одежда", link: "/", id: 1 },
+  { name: "Главная", link: "/", id: 1 },
   { name: "Каталог", link: "/products", id: 2 },
+  // { name: "ADMIN", link: "/admin", id: 3 },
 ];
 const settings = ["Profile", "Account", "Dashboard"];
 
@@ -74,15 +77,6 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = React.useState(searchParams.get("q") || "");
-
-  React.useEffect(() => {
-    setSearchParams({
-      q: search,
-    });
-  }, [search]);
-
   const [count, setCount] = React.useState(0);
 
   const { addProductToCart } = useCart();
@@ -95,6 +89,13 @@ function Navbar() {
     handleLogout,
     user: { email },
   } = useAuth();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#222" }}>
@@ -247,16 +248,11 @@ function Navbar() {
             <SearchIcon sx={{ marginLeft: "10px", marginRight: "10px" }} />
 
             <TextField
-              variant="standard"
-              placeholder="поиск..."
-              sx={{
-                "& input": {
-                  color: "white",
-                  borderColor: "gray",
-                  p: "px",
-                },
-              }}
+              value={search}
               onChange={(e) => setSearch(e.target.value)}
+              fullWidth
+              label="search..."
+              variant="standard"
             />
           </Box>
           <Box></Box>

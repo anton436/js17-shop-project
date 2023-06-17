@@ -24,7 +24,6 @@ const CartContextProvider = ({ children }) => {
 
   const getCart = () => {
     let cart = JSON.parse(localStorage.getItem("cart"));
-
     if (!cart) {
       localStorage.setItem(
         "cart",
@@ -66,7 +65,6 @@ const CartContextProvider = ({ children }) => {
     }
 
     cart.totalPrice = calcTotalPrice(cart.products);
-
     localStorage.setItem("cart", JSON.stringify(cart));
     dispatch({ type: ACTIONS.GET_CART, payload: cart });
   };
@@ -90,7 +88,6 @@ const CartContextProvider = ({ children }) => {
       return product;
     });
     cart.totalPrice = calcTotalPrice(cart.products);
-
     localStorage.setItem("cart", JSON.stringify(cart));
     dispatch({
       type: ACTIONS.GET_CART,

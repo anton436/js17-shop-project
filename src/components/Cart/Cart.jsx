@@ -23,7 +23,6 @@ const rows = [
 
 export default function Cart() {
   const { cart, getCart, changeProductCount, deleteCartProduct } = useCart();
-
   React.useEffect(() => {
     getCart();
   }, []);

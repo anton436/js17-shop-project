@@ -63,7 +63,6 @@ const MainRoutes = () => {
   ];
 
   const { user } = useAuth();
-
   return (
     <Routes>
       {PUBLIC_ROUTES.map((item) => (
