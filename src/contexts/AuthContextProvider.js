@@ -37,7 +37,6 @@ const AuthContextProvider = ({ children }) => {
           case "auth/invalid-email":
             setEmailError(err.message);
             break;
-
           case "auth/weak-password":
             setPasswordError(err.message);
             break;

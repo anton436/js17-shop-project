@@ -16,13 +16,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
-import BadgedCartIcon from "./BadgedCartIcon";
 import { useCart } from "../../contexts/CartContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
 import { useState } from "react";
 import { useEffect } from "react";
+import BadgedCartIcon from "./BadgedCartIcon";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
