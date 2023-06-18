@@ -7,26 +7,22 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
-import { Search } from "@mui/icons-material";
+import { Link, useSearchParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
-
 import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
 import BadgedCartIcon from "./BadgedCartIcon";
 import { useCart } from "../../contexts/CartContextProvider";
-import { useState } from "react";
-import { useEffect } from "react";
 import { getCountProductsInCart } from "../../helpers/functions";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
@@ -81,9 +77,11 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = React.useState(0);
+
   const { addProductToCart } = useCart();
-  useEffect(() => {
+
+  React.useEffect(() => {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
 
@@ -112,7 +110,6 @@ function Navbar() {
         }}
       >
         <Toolbar disableGutters sx={{ width: "100%" }}>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -132,9 +129,9 @@ function Navbar() {
               src="https://www.transparentpng.com/thumb/puma-logo/It9NZf-puma-logo-transparent.png"
               alt=""
               width="40px"
+              className="puma_icon"
             />
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -248,7 +245,7 @@ function Navbar() {
               height: "40px",
             }}
           >
-            <SearchIcon sx={{ marginLeft: "10px" }} />
+            <SearchIcon sx={{ marginLeft: "10px", marginRight: "10px" }} />
 
             <TextField
               value={search}
@@ -257,11 +254,6 @@ function Navbar() {
               label="search..."
               variant="standard"
             />
-
-            {/* <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              /> */}
           </Box>
           <Box></Box>
           <Box sx={{ flexGrow: 0 }}>
@@ -285,7 +277,7 @@ function Navbar() {
                 vertical: "top",
                 horizontal: "right",
               }}
-              keepMounted
+              Mounted
               transformOrigin={{
                 vertical: "top",
                 horizontal: "right",

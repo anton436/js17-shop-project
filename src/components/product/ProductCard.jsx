@@ -15,7 +15,7 @@ import { ADMIN } from "../../helpers/consts";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
-  const { addProductToCart, checkProductCard } = useCart();
+  const { addProductToCart, checkProductCart } = useCart();
   const navigate = useNavigate();
   const {
     user: { email },
@@ -67,7 +67,7 @@ export default function ProductCard({ item }) {
         ) : (
           <IconButton
             sx={{
-              color: checkProductCard(item.id) ? "primary" : "inherit",
+              color: checkProductCart(item.id) ? "primary" : "inherit",
             }}
             onClick={() => addProductToCart(item)}
           >
